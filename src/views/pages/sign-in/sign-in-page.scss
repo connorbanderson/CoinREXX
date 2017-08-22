@@ -1,0 +1,137 @@
+body, html{
+  margin: 0px !important;
+  height: 100vh !important;
+}
+.flexx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.loginBody{
+  .background{
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .backgroundOne{
+    background: url('http://i.imgur.com/KFBoZrN.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .backgroundTwo{
+    background: url('http://i.imgur.com/q9E6xg2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .topHeader{
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 120px;
+    position: fixed;
+    top: 40%;
+    color: white;
+  }
+  .bottomHeader{
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 120px;
+    position: fixed;
+    top: 30%;
+    color: white;
+    animation: fadeIn 1s;
+  }
+  .loginNav{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    animation: fadeIn 1s;
+    .navleft{
+      font-family: 'Saira', sans-serif;
+      font-size: 30px;
+      position: absolute;
+      left: 10px;
+    }
+  }
+  .loginDiv{
+    padding: 15px;
+    position: fixed;
+    bottom: 20%;
+    width: 80vw;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 2px;
+    height: 300px;
+    animation: fadeIn 1s;
+  }
+  .hidden{
+    display: none;
+  }
+  .inputCustom{
+    width: 100%;
+    height: 30%;
+    margin-bottom: 20px;
+    font-size: 20px !important;
+    border: 0px !important;
+    padding: 2px !important;
+    Input:focus{
+
+    }
+  }
+  .loginButton{
+    width: 100%;
+    height: 60px;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes grow {
+  from {width: 0%; }
+  to {width: 100%; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+
+
+
+.mainHeaderStatTop{
+  position: fixed;
+  top: 55%;
+  color: white;
+  text-shadow: 1px 1px 2px grey, 0 0 25px grey;
+  cursor: pointer;
+}
+.mainHeaderStatBottom{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: white;
+  text-shadow: 1px 1px 2px grey, 0 0 25px grey;
+  cursor: pointer;
+}
+
+.mainHeaderStat:hover{
+  cursor: pointer;
+  text-shadow: 1px 1px 2px black, 0 0 25px black;
+}

@@ -1,0 +1,197 @@
+.flexx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flexx-nowrap{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.flexx-top{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.coinCard{
+  width: 30%;
+  height: 80px;
+  background-color: black;
+  .header{
+    color: white;
+  }
+  h1{
+    color: white;
+    font-size: 20px;
+  }
+}
+
+
+.topHeaderIcon{
+  height: 59px;
+  width: 70px;
+}
+
+
+
+.treemapMain{
+  position: absolute;
+  top: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topBar{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 64px;
+  width: 100%;
+  background-color: #424242;
+    .iconWrapper{
+      width: 50px;
+      height: 64px;
+      cursor: pointer;
+      &:hover .iconn{
+        color: #EDE7F6;
+      }
+      .iconn {
+        color: white;
+      }
+    }
+    .headerWrapper{
+      height: 64px;
+      position: fixed;
+      top: 0px;
+      left: 20px;
+      cursor: pointer;
+        .headerText{
+          font-family: 'Lobster', cursive;
+          font-size: 40px;
+          color: white;
+          letter-spacing: 1px;
+        }
+    }
+    .accountIcon {
+     position: fixed;
+     top: 0px;
+     right: 20px;
+    }
+    .tintIcon {
+     position: fixed;
+     top: 0px;
+     right: 70px;
+    }
+}
+
+
+.sidebarSmall{
+  position: fixed;
+  left: 0px;
+  top: 64px;
+  height: -webkit-calc(100vh - 64px);
+  height: -moz-calc(100vh - 64px);
+  height: calc(100vh - 64px);
+  width: 50px;
+  background-color: #311B92;
+  .iconWrapper{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    border-right: 5px solid transparent;
+    cursor: pointer;
+    &:hover {
+      border-right: 5px solid white;
+    }
+    &:hover .iconn{
+      color: white;
+    }
+    .iconn {
+      color: white;
+    }
+  }
+}
+
+.sidebarLarge{
+  position: fixed;
+  left: 50px;
+  top: 64px;
+  height: -webkit-calc(100vh   - 64px);
+  height: -moz-calc(100vh - 64px);
+  height: calc(100vh - 64px);
+  width: 80px;
+  background-color: #673AB7;
+}
+
+.innerContentSmall{
+  position: absolute;
+  left: 140px;
+  top: 64px;
+  min-height: -webkit-calc(100vh - 64px);
+  min-height: -moz-calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
+  width: -webkit-calc(100% - 140px);
+  width: -moz-calc(100% - 140px);
+  width: calc(100% - 140px);
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.innerContentBig{
+  position: absolute;
+  left: 64px;
+  top: 64px;
+  min-height: -webkit-calc(100vh - 64px);
+  min-height: -moz-calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
+  width: -webkit-calc(100% - 64px);
+  width: -moz-calc(100% - 64px);
+  width: calc(100% - 64px);
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.antSideBar{
+  position: fixed;
+  left: 0px;
+  top: 64px;
+  height: -webkit-calc(100vh - 64px);
+  height: -moz-calc(100vh - 64px);
+  height: calc(100vh - 64px);
+  width: -webkit-calc(240px);
+  width: -moz-calc(240px);
+  width: calc(240px);
+  background-color: #424242;
+  Menu{
+    height: -webkit-calc(100vh - 64px);
+    height: -moz-calc(100vh - 64px);
+    height: calc(100vh - 64px);
+  }
+}
+
+.portCard{
+  margin: 20px;
+}
+
+.faIcon{
+  margin-right: 4px;
+}
