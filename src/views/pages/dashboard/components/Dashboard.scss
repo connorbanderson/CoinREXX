@@ -195,3 +195,103 @@
 .faIcon{
   margin-right: 4px;
 }
+
+.cryptoCard{
+  position: relative;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 2px;
+  color: white;
+  width: 150px;
+  height: 70px;
+  margin: 10px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 2px;
+  .cardNameWrapper{
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    height: 30px;
+    .cardName{
+      font-family: 'Encode Sans', sans-serif;
+      color: black;
+      font-size: 18px;
+    }
+  }
+  .cardPriceWrapper{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 20px;
+    .cardPrice{
+      font-family: 'Encode Sans Expanded', sans-serif;
+      color: black;
+      font-size: 16px;
+    }
+  }
+  .card24H{
+    position: absolute;
+    top: 0px;
+    right: 3px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+  }
+  .rank{
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    h1{
+      font-size: 15px;
+      color: black;
+    }
+  }
+}
+
+
+.iconBox{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 35%;
+  width: 25px;
+}
+.boxUp{
+  background-color: #81C784;
+}
+.boxUpHeader{
+  color: #81C784;
+}
+.boxDoubleUp{
+  background-color: #00C853;
+}
+.boxDoubleUpHeader{
+  color: #00C853;
+}
+.boxDown{
+  background-color: #E57373;
+}
+.boxDownHeader{
+  color: #E57373;
+}
+.boxDoubleDown{
+  background-color: #F44336;
+}
+.boxDoubleDownHeader{
+  color: #F44336;
+}
+.boxRocket{
+  background-color: #616161;
+}
+.boxRocketHeader{
+  color: #616161;
+}
+.fa-rocket{
+  transform: scale(0.8);
+}
+.boxShip{
+  background-color: #D50000;
+}
+.boxShipHeader{
+  color: #D50000;
+}
