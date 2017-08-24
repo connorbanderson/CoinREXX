@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
 import { List } from 'immutable';
 import PropTypes from 'prop-types';
-import classNames from 'classnames'
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Menu, Icon, Button, Card, Select, Tooltip } from 'antd';
+
 import { getNotification, notificationActions } from 'src/notification';
 import { getTaskFilter, getVisibleTasks, tasksActions } from 'src/tasks';
 import Notification from '../../components/notification';
 import TaskFilters from '../../components/task-filters';
 import TaskForm from '../../components/task-form';
 import TaskList from '../../components/task-list';
-import Sidebar from '../../components/sidebar';
 
-import './tasks.css'
-const SubMenu = Menu.SubMenu;
 
 export class TasksPage extends Component {
-
-  constructor( props ){
-    super(props)
-    this.state = {
-      collapsed: false,
-      isCoin: {}
-    }
-  }
-
   static propTypes = {
     createTask: PropTypes.func.isRequired,
     dismissNotification: PropTypes.func.isRequired,
@@ -78,40 +65,24 @@ export class TasksPage extends Component {
     );
   }
 
-    toggleCollapsed = () => {
-      console.log('suhhh', this.state.collapsed);
-      this.setState({
-        collapsed: !this.state.collapsed
-      })
-    }
-
-
   render() {
-    let innerContent = classNames({
-      'innerContentSmall': !this.state.collapsed,
-      'innerContentBig': this.state.collapsed,
-      'flexx': true
-    })
     return (
       <div className="g-row">
-        <Sidebar collapsedSate={this.state.collapsed} />
-        <div className='topBar'>
-          <div className='headerWrapper flexx headerText'>
-            <img className='topHeaderIcon' src='./coinrexheadlogo.svg'></img>
-            <h1 className='headerText'>CoinREX</h1>
-          </div>
-          <div className='iconWrapper flexx accountIcon'>
-            <i className="fa fa-user-circle fa-3x iconn" aria-hidden="true"></i>
-          </div>
-          <div className='iconWrapper flexx tintIcon'>
-            <i className="fa fa-tint fa-2x iconn" aria-hidden="true"></i>
-          </div>
+        <div className="g-col">
+          <TaskForm handleSubmit={this.props.createTask} />
         </div>
-        <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-        </Button>
 
+        <div className="g-col">
+          <TaskFilters filter={this.props.filterType} />
+          <TaskList
+            removeTask={this.props.removeTask}
+            tasks={this.props.tasks}
+            updateTask={this.props.updateTask}
+          />
+        </div>
+        {this.props.notification.display ? this.renderNotification() : null}
 
+        <h1>Check if ur over it</h1> 
       </div>
     );
   }
@@ -143,23 +114,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(TasksPage);
-
-/*
-
-<div className="g-col">
-  <TaskForm handleSubmit={this.props.createTask} />
-</div>
-
-<div className="g-col">
-  <TaskFilters filter={this.props.filterType} />
-  <TaskList
-    removeTask={this.props.removeTask}
-    tasks={this.props.tasks}
-    updateTask={this.props.updateTask}
-  />
-</div>
-{this.props.notification.display ? this.renderNotification() : null}
-
-<h1>Check if ur over it</h1>
-
-*/

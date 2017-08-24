@@ -42,16 +42,19 @@ export function signInSuccess(result) {
 
 
 export function signInWithGithub() {
+  console.log('hitting github action');
   return authenticate(new firebase.auth.GithubAuthProvider());
 }
 
 
 export function signInWithGoogle() {
+  console.log('hitting google action');
   return authenticate(new firebase.auth.GoogleAuthProvider());
 }
 
 
 export function signInWithTwitter() {
+  console.log('hitting twitter action');
   return authenticate(new firebase.auth.TwitterAuthProvider());
 }
 

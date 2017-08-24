@@ -6,6 +6,7 @@ import { authActions } from 'src/auth';
 import Scroll from 'react-scroll';
 import classNames from 'classnames'
 import { Input } from 'semantic-ui-react'
+import { Button } from 'antd'
 import $ from 'jquery';
 import './sign-in-page.css';
 
@@ -110,9 +111,7 @@ scrollTop(){
         <div className='background backgroundOne flexx' />
         <div className='background backgroundTwo flexx' />
         <div className={loginForm}>
-          <Input placeholder='Username' className='inputCustom pwdiv'>
-          </Input>
-          <Input placeholder='Password' type="password" className='inputCustom emaildiv' />
+        <Button className="sign-in__button" onClick={this.props.signInWithGoogle}> Google </Button>
           <Link to={`/user`} className='nodecoration loginButton flexx'>
             Login
           </Link>
@@ -146,7 +145,7 @@ const mapDispatchToProps = {
   signInWithTwitter: authActions.signInWithTwitter
 };
 
-export default withRouter(connect(null,mapDispatchToProps)(SignInPage));
+export default withRouter(connect(null, mapDispatchToProps)(SignInPage));
 
 
 /*
