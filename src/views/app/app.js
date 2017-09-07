@@ -11,6 +11,7 @@ import SignInPage from '../pages/sign-in';
 import TasksPage from '../pages/tasks';
 import User from '../pages/user';
 import Dashboard from '../pages/dashboard';
+import FourohFour from '../pages/dashboard/components/Dashboard404';
 
 
 const App = ({authenticated, signOut}) => (
@@ -19,6 +20,8 @@ const App = ({authenticated, signOut}) => (
       <RequireUnauthRoute authenticated={authenticated} path="/sign-in" component={SignInPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/user" component={User}/>
       <RequireUnauthRoute authenticated={authenticated} path="/dashboard" component={Dashboard}/>
+      <RequireUnauthRoute authenticated={authenticated} path="/" component={FourohFour}/>
+
   </div>
 );
 
