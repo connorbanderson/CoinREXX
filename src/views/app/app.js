@@ -20,10 +20,8 @@ const App = ({authenticated, signOut}) => (
       <RequireUnauthRoute authenticated={authenticated} path="/sign-in" component={SignInPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/user" component={User}/>
       <RequireUnauthRoute authenticated={authenticated} path="/dashboard" component={Dashboard}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/" component={FourohFour}/>
-
   </div>
-);
+)
 
 App.propTypes = {
   authenticated: PropTypes.bool.isRequired,

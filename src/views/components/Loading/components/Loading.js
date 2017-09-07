@@ -42,7 +42,7 @@ class Loading extends Component {
         return (
           <div className='loadingScreen flexx'>
             <h1 className='loadingHeader'> Loading... </h1>
-            <img className='kaaapaa' src='./coinrexlogoB.svg'></img>
+            <img className='kaaapaa' src='/coinrexlogoB.svg'></img>
           </div>
         )
     }
