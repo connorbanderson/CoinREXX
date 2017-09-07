@@ -46,7 +46,6 @@ export const createRoutes = () => (
     <Route path='/dashboard/editeventtt/:id' exact component={SpecificEventEdit} />
     <Route path='/dashboard/editevent/:id' exact component={EditEvent} />
     <Route path='/dashboard/theme' exact component={Theme} />
-    <Route render={ () => <Home /> } />
   </Switch>
 )
 

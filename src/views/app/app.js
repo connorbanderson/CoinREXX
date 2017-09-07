@@ -19,7 +19,6 @@ const App = ({authenticated, signOut}) => (
       <RequireUnauthRoute authenticated={authenticated} path="/sign-in" component={SignInPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/user" component={User}/>
       <RequireUnauthRoute authenticated={authenticated} path="/dashboard" component={Dashboard}/>
-
   </div>
 );
 

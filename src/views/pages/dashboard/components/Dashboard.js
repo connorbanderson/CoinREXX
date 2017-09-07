@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 import './Dashboard.css'
 import Scroll from 'react-scroll';
 import classNames from 'classnames'
@@ -9,14 +9,18 @@ import Loading from '../../../components/Loading'
 import $ from 'jquery';
 import { updateCoins } from '../../../../reducers/crypto'
 import { updatePortfolio } from '../../../../reducers/accountinfo'
-
+import DashboardTop from './DashboardTop'
+import DashboardPortfolios from './DashboardPortfolios'
+import Dashboard404 from './Dashboard404'
 import {bindActionCreators} from 'redux'
 import 'public/coinrexlogow.svg'
 import 'public/coinrexlogoB.svg'
 import 'public/coinrexheadlogo.svg'
 import 'public/coinrexheadlogo2.svg'
-import { Menu, Icon, Button, Card, Select, Tooltip } from 'antd';
+import { Menu, Icon, Button, Card, Select, Tooltip } from 'antd'
 import 'antd/dist/antd.css'
+import RequireUnauthRoute from '../../../components/require-unauth-route';
+
 const SubMenu = Menu.SubMenu;
 const Option = Select.Option;
 
@@ -225,25 +229,17 @@ class Dashboard extends Component {
         'innerContentBig': this.state.collapsed,
         'flexx': true
       })
-
-
       let cryptoList = Object.keys(this.props.crypto)
-      console.log('cryptolist is', cryptoList);
-
       let cryptoListO = cryptoList.map((key, i) => {
         let coin = this.props.crypto[key]
         return(
           <Option key={key}> {coin.name} </Option>
         )
       })
-
-
       function handleChange(value) {
-        console.log(`selected ${value}`);
         let kappa = 'kappa'
         this.props.updatePortfolio(['value'])
       }
-
       function printTop(props) {
         let cryptoKeys = Object.keys(props.crypto)
         console.log('here are they keys', cryptoKeys)
@@ -338,13 +334,17 @@ class Dashboard extends Component {
           <div className='topBar'>
             <div className='headerWrapper flexx headerText'>
               <img className='topHeaderIcon' src='./coinrexheadlogo.svg'></img>
-              <h1 className='headerText'>CoinREX</h1>
+              <Link to="/dashboard/portfolios">
+                <h1 className='headerText'>CoinREX</h1>
+              </Link>
             </div>
             <div className='iconWrapper flexx accountIcon'>
               <i className="fa fa-user-circle fa-3x iconn" aria-hidden="true"></i>
             </div>
             <div className='iconWrapper flexx tintIcon'>
-              <i className="fa fa-tint fa-2x iconn" aria-hidden="true"></i>
+              <Link to="/dashboard/portfolios">
+                <i className="fa fa-tint fa-2x iconn" aria-hidden="true"></i>
+              </Link>
             </div>
           </div>
           <div className='antSideBar' style={{ width: 240 }}>
@@ -370,28 +370,31 @@ class Dashboard extends Component {
                 <Icon type="inbox" />
                 <span>Option 3</span>
               </Menu.Item>
-              <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                <Menu.Item key="5">Option 5</Menu.Item>
-                <Menu.Item key="6">Option 6</Menu.Item>
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
-              </SubMenu>
-              <SubMenu key="sub2" title={<span><i className="fa fa-rocket faIcon" aria-hidden="true" /><span>Portfolios</span></span>}>
-                <Menu.Item key="9">Main ${portfolio1}</Menu.Item>
-                <Menu.Item key="10">Connor ${portfolio2}</Menu.Item>
-                <Menu.Item key="11">Suji ${portfolio3}</Menu.Item>
-                <Menu.Item key="12">Total ${portfolio1 + portfolio2 + portfolio3}</Menu.Item>
-
-                <SubMenu key="sub3" title="Submenu">
-                  <Menu.Item key="13">Option 13</Menu.Item>
-                  <Menu.Item key="14">Option 14</Menu.Item>
-                  </SubMenu>
+                <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
+                  <Menu.Item key="5">Option 5</Menu.Item>
+                  <Menu.Item key="6">Option 6</Menu.Item>
+                  <Menu.Item key="7">Option 7</Menu.Item>
+                  <Menu.Item key="8">Option 8</Menu.Item>
                 </SubMenu>
+                  <SubMenu key="sub2" title={<span><i className="fa fa-rocket faIcon" aria-hidden="true" /><span>Portfolios</span></span>}>
+                    <Menu.Item key="9">Main ${portfolio1}</Menu.Item>
+                    <Menu.Item key="10">Connor ${portfolio2}</Menu.Item>
+                    <Menu.Item key="11">Suji ${portfolio3}</Menu.Item>
+                    <Menu.Item key="12">Total ${portfolio1 + portfolio2 + portfolio3}</Menu.Item>
+                    <SubMenu key="sub3" title="Submenu">
+                      <Menu.Item key="13">Option 13</Menu.Item>
+                      <Menu.Item key="14">Option 14</Menu.Item>
+                    </SubMenu>
+                  </SubMenu>
               </Menu>
             </div>
-          <div className={innerContent}>
-            {printTop(this.props)}
-          </div>
+              <div className={innerContent}>
+              <Switch>
+                <RequireUnauthRoute exact path="/dashboard/portfolios" component={DashboardPortfolios}/>
+                <RequireUnauthRoute exact path="/dashboard" component={DashboardTop}/>
+                <RequireUnauthRoute path="/dashboard/" component={Dashboard404}/>
+              </Switch>
+              </div>
         </div>
       )
     }
