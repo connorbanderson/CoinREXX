@@ -81,7 +81,12 @@ class Dashboard extends Component {
         'innerContentBig': this.state.collapsed,
         'flexx': true
       })
-
+      let sideBar = classNames({
+        'sidebarSmall': this.state.collapsed,
+        'sidebarBig': !this.state.collapsed,
+        'sidebar': true,
+        'flexx': true
+      })
       return (
         <div className='noselect flexx' >
           <div className='topBar'>
@@ -100,46 +105,12 @@ class Dashboard extends Component {
               </Link>
             </div>
           </div>
-          <div className='antSideBar' style={{ width: 240 }}>
-            <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+
+          <div className={sideBar}>
+            <Button className='toggleSideBarButton' type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
               <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
             </Button>
-            <Menu
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              mode="inline"
-              theme="dark"
-              inlineCollapsed={this.state.collapsed}
-            >
-              <Menu.Item key="1">
-                <Icon type="line-chart" />
-                <span>Market</span>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Icon type="desktop" />
-                <span>Option 2</span>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="inbox" />
-                <span>Option 3</span>
-              </Menu.Item>
-                <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                  <Menu.Item key="5">Option 5</Menu.Item>
-                  <Menu.Item key="6">Option 6</Menu.Item>
-                  <Menu.Item key="7">Option 7</Menu.Item>
-                  <Menu.Item key="8">Option 8</Menu.Item>
-                </SubMenu>
-                  <SubMenu key="sub2" title={<span><i className="fa fa-rocket faIcon" aria-hidden="true" /><span>Portfolios</span></span>}>
-                    <Menu.Item key="9">Option 9</Menu.Item>
-                    <Menu.Item key="10">Option 10</Menu.Item>
-                    <Menu.Item key="11">Option 11</Menu.Item>
-                    <Menu.Item key="12">Option 12</Menu.Item>
-                    <SubMenu key="sub3" title="Submenu">
-                      <Menu.Item key="13">Option 13</Menu.Item>
-                      <Menu.Item key="14">Option 14</Menu.Item>
-                    </SubMenu>
-                  </SubMenu>
-              </Menu>
+
             </div>
               <div className={innerContent}>
                 <Switch>

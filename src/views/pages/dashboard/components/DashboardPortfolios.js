@@ -3,8 +3,10 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import { updateCoins } from '../../../../reducers/crypto'
 import { updatePortfolio } from '../../../../reducers/accountinfo'
-import './Dashboard.css'
+import { updatePortfolioCoins } from '../../../../reducers/portfolios'
 
+import './Dashboard.css'
+import { portfolioGenerator } from './helper'
 
 class DashboardPortfolios extends Component {
 
@@ -19,6 +21,7 @@ class DashboardPortfolios extends Component {
    }
 
   render () {
+    {console.log('this is props', this.props)}
     let portfolio1 = this.round(
       (
         this.props.crypto['BTC'].price*17.2 +
@@ -111,6 +114,7 @@ class DashboardPortfolios extends Component {
           <h1>Connor ${portfolio2}</h1>
           <h1>Suji ${portfolio3}</h1>
           <h1>Total ${portfolio1 + portfolio2 + portfolio3}</h1>
+          {portfolioGenerator(this.props)}
         </div>
       )
     }
@@ -120,14 +124,16 @@ class DashboardPortfolios extends Component {
 function mapStateToProps(state, ownProps) {
     return {
         crypto: state.crypto,
-        account: state.accountinfo['ACT-1']
+        account: state.accountinfo['ACT-1'],
+        portfolios: state.portfolios
     }
 }
 
 function matchDispatchToProps(dispatch){
     return bindActionCreators({
       updateCoins,
-      updatePortfolio
+      updatePortfolio,
+      updatePortfolioCoins
     }, dispatch);
 }
 

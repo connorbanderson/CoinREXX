@@ -64,7 +64,10 @@
   top: 0px;
   height: 64px;
   width: 100%;
-  background-color: #424242;
+  background-color: white;
+  border-bottom-color: rgb(233, 233, 233);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
     .iconWrapper{
       width: 50px;
       height: 64px;
@@ -83,10 +86,9 @@
       left: 20px;
       cursor: pointer;
         .headerText{
-          font-family: 'Lobster', cursive;
+          font-family: 'Play', sans-serif;
           font-size: 40px;
-          color: white;
-          letter-spacing: 1px;
+          color: black;
         }
     }
     .accountIcon {
@@ -170,24 +172,63 @@
   overflow-x: hidden;
 }
 
-.antSideBar{
+.PortfolioCard{
+  position: relative;
+  height: 200px;
+  width: 350px;
+  border-color: rgb(233, 233, 233);
+  border-style: solid;
+  border-width: 1px;
+  .PortfolioCardHeader{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 50px;
+    border-bottom-color: rgb(233, 233, 233);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+  }
+  .PortfolioCardBody{
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    height: calc(100%-50px);
+    .portfolioSelector{
+      width: 78% !important;
+      padding-top: 20px;
+    }
+  }
+}
+
+.sidebar{
   position: fixed;
   left: 0px;
   top: 64px;
   height: -webkit-calc(100vh - 64px);
   height: -moz-calc(100vh - 64px);
   height: calc(100vh - 64px);
-  width: -webkit-calc(240px);
-  width: -moz-calc(240px);
-  width: calc(240px);
-  background-color: #424242;
-  Menu{
-    height: -webkit-calc(100vh - 64px);
-    height: -moz-calc(100vh - 64px);
-    height: calc(100vh - 64px);
+  background-color: white;
+  border-right-color: rgb(233, 233, 233);
+  border-right-style: solid;
+  border-right-width: 1px;
+  .toggleSideBarButton{
+    position: absolute;
+    top: 15px;
+    background-color: black;
+    border-color: black;
   }
 }
 
+.sidebarSmall{
+  width: -webkit-calc(64px);
+  width: -moz-calc(64px);
+  width: calc(64px);
+}
+.sidebarBig{
+  width: -webkit-calc(140px);
+  width: -moz-calc(140px);
+  width: calc(140px);
+}
 .portCard{
   margin: 20px;
 }

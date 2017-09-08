@@ -5,6 +5,7 @@ import { notificationReducer } from './notification';
 import { tasksReducer } from './tasks';
 import crypto from './reducers/crypto'
 import accountinfo from './reducers/accountinfo'
+import portfolios from './reducers/portfolios'
 
 export default combineReducers({
   auth: authReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   routing: routerReducer,
   tasks: tasksReducer,
   crypto,
-  accountinfo
+  accountinfo,
+  portfolios
 });
