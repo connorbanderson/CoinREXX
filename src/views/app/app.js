@@ -8,6 +8,8 @@ import Header from '../components/header';
 import RequireAuthRoute from '../components/require-auth-route';
 import RequireUnauthRoute from '../components/require-unauth-route';
 import SignInPage from '../pages/sign-in';
+import ConnorPage from '../pages/connor';
+
 import TasksPage from '../pages/tasks';
 import User from '../pages/user';
 import Dashboard from '../pages/dashboard';
@@ -18,6 +20,7 @@ const App = ({authenticated, signOut}) => (
   <div>
       <RequireAuthRoute authenticated={authenticated} exact path="/" component={TasksPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/sign-in" component={SignInPage}/>
+      <RequireUnauthRoute authenticated={authenticated} path="/connor" component={ConnorPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/user" component={User}/>
       <RequireUnauthRoute authenticated={authenticated} path="/dashboard" component={Dashboard}/>
   </div>

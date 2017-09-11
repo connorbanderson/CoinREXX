@@ -1,0 +1,147 @@
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
+.1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+  .body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border: 0;
+    position: relative;
+  }
+
+  .entrance {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/E3So61q.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation: darktolight 2s ease-out forwards;
+    .headerWrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      .nameWrapper{
+        h1 {
+          font-size: 8em;
+          color: white;
+          font-family: 'Shadows Into Light', cursive;
+          -webkit-animation: fade 2s ease-out forwards;
+        }
+      }
+      .personalProfessionalWrapper{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        h1{
+          color: white;
+          font-size: 1.8em;
+        }
+        .professional{
+          width: 132px;
+          border-color: rgb(233, 233, 233);
+          border-style: solid;
+          border-width: 1px;
+          margin-right: 10px;
+          padding-left: 6px;
+          padding-right: 6px;
+          cursor: pointer;
+        }
+        .personal{
+          width: 132px;
+          margin-left: 10px;
+          border-color: rgb(233, 233, 233);
+          border-style: solid;
+          border-width: 1px;
+          margin-right: 10px;
+          padding-left: 6px;
+          padding-right: 6px;
+          cursor: pointer;
+        }
+      }
+      .socialWrapper{
+        .fa {
+          margin-left: 10px;
+          margin-right: 10px;
+          color: white;
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  .fadeEntrance{
+    height: 100vh;
+    -webkit-animation: darktolight 2s ease-out forwards;
+    background-color: black;
+    z-index: 998;
+  }
+
+  .navBarVersion1{
+    position: absolute;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    border-bottom-color: rgb(233, 233, 233);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    .topright{
+      position: absolute;
+      top: 0px;
+      left: 13px;
+      height: 60px;
+      width: 60px;
+      color: white;
+      font-size: 4em;
+      font-family: 'Dancing Script', cursive;
+    }
+  }
+
+  @-webkit-keyframes darktolight {
+      0% {
+        opacity: 0;
+     }
+      100% {
+        opacity: 1;
+     }
+  }
+
+  @-webkit-keyframes fadeIcon {
+      0% {
+        transform: scale(.85);
+     }
+      100% {
+        transform: scale(1);
+     }
+  }
+
+  @-webkit-keyframes fade {
+      0% {
+        opacity: 0;
+     }
+      100% {
+        opacity: 1;
+     }
+  }

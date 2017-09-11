@@ -89,6 +89,7 @@ class Dashboard extends Component {
       })
       return (
         <div className='noselect flexx' >
+
           <div className='topBar'>
             <div className='headerWrapper flexx headerText'>
               <img className='topHeaderIcon' src='/coinrexheadlogo.svg'></img>
@@ -110,15 +111,16 @@ class Dashboard extends Component {
             <Button className='toggleSideBarButton' type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
               <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
             </Button>
+          </div>
 
-            </div>
-              <div className={innerContent}>
-                <Switch>
-                  <RequireUnauthRoute exact path="/dashboard/portfolios" component={DashboardPortfolios}/>
-                  <RequireUnauthRoute exact path="/dashboard" component={DashboardTop}/>
-                  <RequireUnauthRoute path="/dashboard/" component={Dashboard404}/>
-                </Switch>
-              </div>
+          <div className={innerContent}>
+            <Switch>
+              <RequireUnauthRoute exact path="/dashboard/portfolios" component={DashboardPortfolios}/>
+              <RequireUnauthRoute exact path="/dashboard" component={DashboardTop}/>
+              <RequireUnauthRoute path="/dashboard/" component={Dashboard404}/>
+            </Switch>
+          </div>
+
         </div>
       )
     }
