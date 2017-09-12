@@ -1,0 +1,44 @@
+.flexx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.loadingScreen{
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+
+.kaaapaa{
+ width: 70%;
+ height: 50vh;
+}
+
+.loadingHeader{
+  position: absolute;
+  margin-right: 10%;
+  top: 55vh;
+  font-family: 'Lobster', cursive;
+  font-size: 16px;
+  font-size: 5vw;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.loadingScreenAfter{
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+
+.nextButton{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}

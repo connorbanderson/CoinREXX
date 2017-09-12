@@ -4,6 +4,12 @@ import {connect} from 'react-redux'
 import { updateCoins } from '../../../../reducers/crypto'
 import { updatePortfolio } from '../../../../reducers/accountinfo'
 import { updatePortfolioCoins } from '../../../../reducers/portfolios'
+import 'public/PumpJack.svg'
+import 'public/MeasurementPointBetter.svg'
+import 'public/PJSmall.svg'
+import 'public/MP-Small.svg'
+import 'public/MP-Small-V3.svg'
+
 
 import './Dashboard.css'
 import { portfolioGenerator } from './helper'
@@ -114,7 +120,30 @@ class DashboardPortfolios extends Component {
           <h1>Connor ${portfolio2}</h1>
           <h1>Suji ${portfolio3}</h1>
           <h1>Total ${portfolio1 + portfolio2 + portfolio3}</h1>
-          {portfolioGenerator(this.props)}
+           <div className='fakeCard'>
+            <div className='header'>
+              <img className='pumpJack' src='/PJSmall.svg'></img>
+            </div>
+            <div className='body'>
+
+            </div>
+           </div>
+
+           <div className='fakeCard'>
+            <div className='header'>
+              <img className='mp' src='/MP-Small-V3.svg'></img>
+            </div>
+            <div className='body'>
+            </div>
+           </div>
+
+           <div className='fakeCard'>
+            <div className='header'>
+              <img className='mp' src='/nodeSmall.svg'></img>
+            </div>
+            <div className='body'>
+            </div>
+           </div>
         </div>
       )
     }
@@ -138,3 +167,9 @@ function matchDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(DashboardPortfolios)
+
+/*
+
+  {portfolioGenerator(this.props)}
+
+  */

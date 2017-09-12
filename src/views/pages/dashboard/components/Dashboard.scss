@@ -33,7 +33,7 @@
 
 
 .topHeaderIcon{
-  height: 59px;
+  height: 150px;
   width: 70px;
 }
 
@@ -183,7 +183,7 @@
     position: absolute;
     width: 100%;
     top: 0px;
-    height: 50px;
+    height: 150px;
     border-bottom-color: rgb(233, 233, 233);
     border-bottom-style: solid;
     border-bottom-width: 1px;
@@ -369,4 +369,36 @@
   border-radius: 0px;
   border-style: solid;
   border-width: 1px;
+}
+
+
+.fakeCard{
+  margin: 20px;
+  position: relative;
+  height: 350px;
+  width: 240px;
+  border-color: rgb(233, 233, 233);
+  border-radius: 0px;
+  border-style: solid;
+  border-width: 1px;
+  .header{
+   position: absolute;
+   top: 0px;
+   height: 300px;
+   width: 100%;
+   border-bottom-color: rgb(233, 233, 233);
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+
+  }
+  .pumpJack{
+    transform: scale(1.15);
+    position: absolute;
+    bottom: 2px;
+  }
+  .mp{
+    transform: scale(.98);
+    position: absolute;
+    bottom: 2px;
+  }
 }
