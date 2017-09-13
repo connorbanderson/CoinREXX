@@ -17,6 +17,8 @@ import 'public/coinrexlogow.svg'
 import 'public/coinrexlogoB.svg'
 import 'public/coinrexheadlogo.svg'
 import 'public/coinrexheadlogo2.svg'
+import 'public/coinrexheadlogo2.svg'
+
 import { Menu, Icon, Button, Card, Select, Tooltip } from 'antd'
 import 'antd/dist/antd.css'
 import RequireUnauthRoute from '../../../components/require-unauth-route';

@@ -9,6 +9,7 @@ import { Input } from 'semantic-ui-react'
 import { Button } from 'antd'
 import $ from 'jquery';
 import './connor.css';
+import 'public/cbalogoentrance.svg'
 
 
 
@@ -100,6 +101,8 @@ scrollTop(){
 
     return (
       <div className='body' >
+      <img className='logoentrance' src='/cbalogoentrance.svg'></img>
+
         <div className='entrance'>
 
         <div className='navBarVersion1'>
