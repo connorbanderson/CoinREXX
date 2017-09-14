@@ -9,6 +9,7 @@ import RequireAuthRoute from '../components/require-auth-route';
 import RequireUnauthRoute from '../components/require-unauth-route';
 import SignInPage from '../pages/sign-in';
 import ConnorPage from '../pages/connor';
+import LandingPage from '../pages/landing';
 
 import TasksPage from '../pages/tasks';
 import User from '../pages/user';
@@ -21,6 +22,7 @@ const App = ({authenticated, signOut}) => (
       <RequireAuthRoute authenticated={authenticated} exact path="/" component={TasksPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/sign-in" component={SignInPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/connor" component={ConnorPage}/>
+      <RequireUnauthRoute authenticated={authenticated} path="/landing" component={LandingPage}/>
       <RequireUnauthRoute authenticated={authenticated} path="/user" component={User}/>
       <RequireUnauthRoute authenticated={authenticated} path="/dashboard" component={Dashboard}/>
   </div>

@@ -1,0 +1,127 @@
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.flexx{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingBody{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #29B6F6;
+
+  .professionalDiv{
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    left: 0px;
+    z-index: 2;
+  }
+  .personalDiv{
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    right: 0px;
+    z-index: 2;
+  }
+
+
+.personalSVG{
+  height: 50vh;
+  left: 0px;
+}
+.professionalSVG{
+  height: 50vh;
+  right: 0px;
+}
+
+.cloudSVG1{
+  height: 7vh;
+  width: 12vw;
+  position: absolute;
+  top: 20%;
+  left: 0px;
+}
+
+.cloudSVG2{
+  height: 7.5vh;
+  width: 11.5vw;
+  position: absolute;
+  top: 10%;
+  left: 90vw;
+}
+.cloudSVG3{
+  height: 6.5vh;
+  width: 12.5vw;
+  position: absolute;
+  top: 5%;
+  left: 60vw;
+}
+.cloudSVG4{
+  height: 6vh;
+  width: 12.5vw;
+  position: absolute;
+  top: 20%;
+  left: 0px;
+}
+}
+
+  @keyframes example {
+    from {top: calc(0px - 100vh);}
+    to {top: calc(0px - 25vh);}
+  }
+
+
+
+
+
+  @media only screen and (min-width: 800px) {
+    .landingSVG{
+      position: absolute;
+      top: 0px;
+      width: 22vw;
+      z-index: 3;
+      animation-name: example800;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
+      animation-fill-mode: forwards;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .landingSVG{
+      position: absolute;
+      top: 0px;
+      width: 22vw;
+      z-index: 3;
+      animation-name: example1200;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
+      animation-fill-mode: forwards;
+    }
+  }
+
+
+  @keyframes example800 {
+    from {top: calc(0px - 100vh);}
+    to {top: calc(0px - 20vh);}
+  }
+
+  @keyframes example1200 {
+    from {top: calc(0px - 100vh);}
+    to {top: calc(0px - 25vh);}
+  }
