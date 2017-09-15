@@ -23,7 +23,6 @@
   z-index: 1;
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: #29B6F6;
 
   .professionalDiv{
     position: absolute;
@@ -31,6 +30,12 @@
     width: 50%;
     left: 0px;
     z-index: 2;
+    background-color: #29B6F6;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #4FC3F7;
+    }
   }
   .personalDiv{
     position: absolute;
@@ -38,47 +43,67 @@
     width: 50%;
     right: 0px;
     z-index: 2;
+    background-color: #29B6F6;
+    cursor: pointer;
+
+    &:hover{
+      background-color: #4FC3F7;
+    }
   }
 
 
-.personalSVG{
-  height: 50vh;
+.cloud{
+  position: absolute;
   left: 0px;
-}
-.professionalSVG{
-  height: 50vh;
-  right: 0px;
+  -webkit-animation: moveAcross 40s linear forwards;
+  -o-animation: moveAcross 40s linear forwards;
+  -mox-animation: moveAcross 40s linear forwards;
+  animation: moveAcross 40s linear forwards infinite;
+  z-index: 3;
 }
 
 .cloudSVG1{
   height: 7vh;
   width: 12vw;
-  position: absolute;
   top: 20%;
-  left: 0px;
 }
-
 .cloudSVG2{
   height: 7.5vh;
   width: 11.5vw;
-  position: absolute;
   top: 10%;
-  left: 90vw;
+  -webkit-animation-delay: -15s;
+  animation-delay: -15s;
 }
 .cloudSVG3{
   height: 6.5vh;
   width: 12.5vw;
-  position: absolute;
   top: 5%;
-  left: 60vw;
+  -webkit-animation-delay: -28s;
+  animation-delay: -28s;
 }
 .cloudSVG4{
   height: 6vh;
   width: 12.5vw;
-  position: absolute;
   top: 20%;
-  left: 0px;
+  -webkit-animation-delay: -33s;
+  animation-delay: -33s;
 }
+
+@-webkit-keyframes moveAcross{
+  0% {
+    left: calc(-10vw);
+  }
+  100%{
+    left: calc(110vw);
+  }
+}
+
+
+
+
+
+
+
 }
 
   @keyframes example {
@@ -87,34 +112,158 @@
   }
 
 
-
-
-
+  @media only screen and (min-width: 200px) {
+    .landingSVG{
+      position: absolute;
+      top: 0px;
+      height: 50vh;
+      z-index: 3;
+      animation-name: example400;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
+      animation-fill-mode: forwards;
+    }
+    .personalSVG{
+      margin-top: 10vw;
+      margin-right: 10vw;
+      height: 100vh;
+      left: 0px;
+    }
+    .professionalSVG{
+      margin-top: 10vw;
+      margin-left: 10vw;
+      height: 30vh;
+      right: 0px;
+    }
+  }
+  @media only screen and (min-width: 400px) {
+    .landingSVG{
+      position: absolute;
+      top: 0px;
+      height: 60vh;
+      z-index: 3;
+      animation-name: example400;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
+      animation-fill-mode: forwards;
+    }
+    .personalSVG{
+      margin-top: 10vw;
+      margin-right: 10vw;
+      cursor: pointer;
+      height: 30vh;
+      left: 0px;
+    }
+    .professionalSVG{
+      margin-top: 10vw;
+      margin-left: 10vw;
+      height: 30vh;
+      right: 0px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .landingSVG{
+      position: absolute;
+      top: 0px;
+      height: 70vh;
+      z-index: 3;
+      animation-name: example600;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
+      animation-fill-mode: forwards;
+    }
+    .personalSVG{
+      margin-top: 10vw;
+      margin-right: 10vw;
+      cursor: pointer;
+      height: 30vh;
+      left: 0px;
+    }
+    .professionalSVG{
+      margin-top: 10vw;
+      margin-left: 10vw;
+      height: 30vh;
+      right: 0px;
+    }
+  }
   @media only screen and (min-width: 800px) {
     .landingSVG{
       position: absolute;
       top: 0px;
-      width: 22vw;
+      height: 70vh;
       z-index: 3;
       animation-name: example800;
       animation-duration: 1.5s;
       animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
       animation-fill-mode: forwards;
     }
+    .personalSVG{
+      margin-top: 10vw;
+      margin-right: 10vw;
+      cursor: pointer;
+      height: 35vh;
+      left: 0px;
+    }
+    .professionalSVG{
+      margin-top: 10vw;
+      margin-left: 10vw;
+      height: 35vh;
+      right: 0px;
+    }
   }
   @media only screen and (min-width: 1200px) {
     .landingSVG{
       position: absolute;
       top: 0px;
-      width: 22vw;
+      height: 55vw;
       z-index: 3;
       animation-name: example1200;
       animation-duration: 1.5s;
       animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
       animation-fill-mode: forwards;
     }
+    .personalSVG{
+      height: 50vh;
+      left: 0px;
+      cursor: pointer;
+    }
+    .professionalSVG{
+      height: 50vh;
+      right: 0px;
+    }
+
+  }
+  @media only screen and (min-width: 1600px) {
+    .landingSVG{
+      position: absolute;
+      top: 0px;
+      height: 95vh;
+      z-index: 3;
+      animation-name: example1600;
+      animation-duration: 1.5s;
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.35, 2.0);
+      animation-fill-mode: forwards;
+    }
+    .personalSVG{
+      height: 50vh;
+      left: 0px;
+      cursor: pointer;
+    }
+    .professionalSVG{
+      height: 50vh;
+      right: 0px;
+    }
+
   }
 
+  @keyframes example400 {
+    from {top: calc(0px - 100vh);}
+    to {top: calc(0px - 20vh);}
+  }
+  @keyframes example600 {
+    from {top: calc(0px - 100vh);}
+    to {top: calc(0px - 20vh);}
+  }
 
   @keyframes example800 {
     from {top: calc(0px - 100vh);}
@@ -123,5 +272,10 @@
 
   @keyframes example1200 {
     from {top: calc(0px - 100vh);}
-    to {top: calc(0px - 25vh);}
+    to {top: calc(0px - 20vh);}
+  }
+
+  @keyframes example1600 {
+    from {top: calc(0px - 100vh);}
+    to {top: calc(0px - 20vh);}
   }

@@ -4,11 +4,14 @@
 	 viewBox="0 0 102 50" style="enable-background:new 0 0 102 50;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
+
+
+
 </style>
 <g>
 	<path class="st0" d="M85.5,47h-70C8,47,2,41,2,33.5v0C2,26,8,20,15.5,20h70C93,20,99,26,99,33.5v0C99,41,93,47,85.5,47z"/>
 </g>
 <g>
-	<ellipse class="st0" cx="52.5" cy="23" rx="23.5" ry="20"/>
+	<ellipse class="st0 animatedCloud" cx="52.5" cy="23" rx="23.5" ry="20"/>
 </g>
 </svg>

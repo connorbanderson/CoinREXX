@@ -101,20 +101,20 @@ scrollTop(){
 
     return (
       <div className='landingBody flexx' >
-        <img className='landingSVG' src='/cbalogoentranceV3.svg'></img>
+        <img className='landingSVG' src='/landingMeteor.svg'></img>
 
       <div className='professionalDiv flexx'>
-        <img className='professionalSVG' src='/personalIsland2.svg'></img>
+        <img className='personalSVG' src='/personalIsland2.svg'></img>
       </div>
 
       <div className='personalDiv flexx'>
-        <img className='personalSVG' src='/professionalIsland3.svg'></img>
+        <img className='professionalSVG' src='/professionalIsland4.svg'></img>
       </div>
 
-      <img className='cloudSVG1' src='/cloud1.svg'></img>
-      <img className='cloudSVG2' src='/cloud2.svg'></img>
-      <img className='cloudSVG3' src='/cloud3.svg'></img>
-      <img className='cloudSVG4' src='/cloud4.svg'></img>
+      <img className='cloud cloudSVG1' src='/cloud1.svg'></img>
+      <img className='cloud cloudSVG2' src='/cloud2.svg'></img>
+      <img className='cloud cloudSVG3' src='/cloud3.svg'></img>
+      <img className='cloud cloudSVG4' src='/cloud4.svg'></img>
 
       </div>
     )
@@ -125,6 +125,11 @@ export default Connor
 
 
 /*
+
+
+
+
+
 
 <div className='loginBody noselect flexx' >
   <h1 className={loginHeaderTop}> Connor Anderson </h1>
