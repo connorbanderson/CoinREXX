@@ -19,8 +19,10 @@ class Connor extends Component {
 
   constructor( props ){
     super(props)
+    console.log('het there state is', this.state);
     this.state = {
-      isHidden: true
+      isHidden: true,
+      transition: false
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -95,26 +97,88 @@ scrollTop(){
       'flexx': true
     })
 
+    let personalDiv = classNames({
+      'personalDiv':  true,
+      'personalDivTransition': this.state.transition,
+      'flexx': true
+    })
+    let professionalDiv = classNames({
+      'professionalDiv': true,
+      'professionalDivTransition': this.state.transition,
+      'flexx': true
+    })
+    let landingSVG = classNames({
+      'landingSVG': true,
+      'landingSVGTransition': this.state.transition,
+    })
+    let cloudWrapper = classNames({
+      'cloudWrapperTransition': this.state.transition,
+    })
+    let professionalPage = classNames({
+      'professionalPageTransition': this.state.transition,
+      'professionalPage': true
+    })
+    let landingBody = classNames({
+      'landingBodyBefore': !this.state.transition,
+      'landingBodyAfter': this.state.transition,
+      'landingBody': true,
+      'noselect': true,
+      'flexx': true
+    })
 
     var loginButton = $('loginButton');
     loginButton.css({ 'opacity': 0 });
 
     return (
-      <div className='landingBody flexx' >
-        <img className='landingSVG' src='/landingMeteor.svg'></img>
+      <div className={landingBody} >
 
-      <div className='professionalDiv flexx'>
-        <img className='personalSVG' src='/personalIsland2.svg'></img>
-      </div>
 
-      <div className='personalDiv flexx'>
-        <img className='professionalSVG' src='/professionalIsland4.svg'></img>
-      </div>
+        <img className={landingSVG} src='/landingMeteor.svg'></img>
+        <div className={personalDiv} onClick={()=>{this.setState({ transition: true })}}>
+          <img className='personalSVG' src='/personalIsland2.svg'></img>
+        </div>
+        <div className={professionalDiv} onClick={()=>{this.setState({ transition: true })}}>
+          <img className='professionalSVG' src='/professionalIsland4.svg'></img>
+        </div>
+        <div className={cloudWrapper}>
+          <img className='cloud cloudSVG1' src='/cloud1.svg'></img>
+          <img className='cloud cloudSVG2' src='/cloud2.svg'></img>
+          <img className='cloud cloudSVG3' src='/cloud3.svg'></img>
+          <img className='cloud cloudSVG4' src='/cloud4.svg'></img>
+        </div>
 
-      <img className='cloud cloudSVG1' src='/cloud1.svg'></img>
-      <img className='cloud cloudSVG2' src='/cloud2.svg'></img>
-      <img className='cloud cloudSVG3' src='/cloud3.svg'></img>
-      <img className='cloud cloudSVG4' src='/cloud4.svg'></img>
+
+
+        <div className={professionalPage}>
+          <div className='section section1 flexx'>
+            <div className='headerWrapper'>
+              <div className='nameWrapper'>
+                <h1 className='noselect'>Connor Anderson</h1>
+              </div>
+              <div className='socialWrapper'>
+                <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
+                  <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
+                </a>
+                <a href="https://www.instagram.com/krnzsti/">
+                  <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
+                </a>
+                <a href="https://github.com/connorbanderson">
+                  <i  className="fa fa-github fa-5x" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <div className='section section2 flexx'>
+            <h1> Section 2</h1>
+          </div>
+          <div className='section section3 flexx'>
+            <h1> Section 3</h1>
+          </div>
+        </div>
+
+
+
 
       </div>
     )
@@ -126,7 +190,52 @@ export default Connor
 
 /*
 
+<div className={professionalPage}>
+  <div className='entrance'>
+    <div className='headerWrapper'>
+      <div className='nameWrapper'>
+        <h1 className='noselect'>Connor Anderson</h1>
+      </div>
+    </div>
+    <div className='socialWrapper'>
+      <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
+        <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
+      </a>
+      <a href="https://www.instagram.com/krnzsti/">
+        <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
+      </a>
+      <a href="https://github.com/connorbanderson">
+        <i  className="fa fa-github fa-5x" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+  <div className='entrance'>
+    <div className='headerWrapper'>
+      <div className='nameWrapper'>
+        <h1 className='noselect'>Connor Anderson</h1>
+      </div>
+    </div>
+    <div className='socialWrapper'>
+      <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
+        <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
+      </a>
+      <a href="https://www.instagram.com/krnzsti/">
+        <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
+      </a>
+      <a href="https://github.com/connorbanderson">
+        <i  className="fa fa-github fa-5x" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</div>
 
+
+
+<div className='navBarVersion1'>
+  <div className='topright'>
+    CA
+  </div>
+</div>
 
 
 

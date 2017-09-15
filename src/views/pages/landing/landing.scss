@@ -14,30 +14,25 @@
   justify-content: center;
 }
 
+.landingBodyBefore{
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.landingBodyAfter{
+  height: 300vh;
+  overflow-y: hidden;
+}
+
 .landingBody{
   width: 100%;
-  height: 100vh;
   margin: 0;
   border: 0;
   position: relative;
   z-index: 1;
-  overflow-y: hidden;
   overflow-x: hidden;
 
   .professionalDiv{
-    position: absolute;
-    height: 100vh;
-    width: 50%;
-    left: 0px;
-    z-index: 2;
-    background-color: #29B6F6;
-    cursor: pointer;
-
-    &:hover{
-      background-color: #4FC3F7;
-    }
-  }
-  .personalDiv{
     position: absolute;
     height: 100vh;
     width: 50%;
@@ -50,17 +45,86 @@
       background-color: #4FC3F7;
     }
   }
+  .personalDiv{
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    left: 0px;
+    z-index: 2;
+    background-color: #29B6F6;
+    cursor: pointer;
+    &:hover{
+      background-color: #4FC3F7;
+    }
+  }
 
 
 .cloud{
   position: absolute;
   left: 0px;
-  -webkit-animation: moveAcross 40s linear forwards;
-  -o-animation: moveAcross 40s linear forwards;
-  -mox-animation: moveAcross 40s linear forwards;
+  -webkit-animation: moveAcross 40s linear infinite;
+  -o-animation: moveAcross 40s linear infinite;
+  -mox-animation: moveAcross 40s linear infinite;
   animation: moveAcross 40s linear forwards infinite;
   z-index: 3;
 }
+
+.personalDivTransition{
+  -webkit-animation: landingTransitionLeft 1s linear forwards;
+  -o-animation: landingTransitionLeft 1s linear forwards;
+  -mox-animation: landingTransitionLeft 1s linear forwards;
+  animation: landingTransitionLeft 1s linear forwards forwards;
+}
+.professionalDivTransition{
+  -webkit-animation: landingTransitionRight 1s linear forwards;
+  -o-animation: landingTransitionRight 1s linear forwards;
+  -mox-animation: landingTransitionRight 1s linear forwards;
+  animation: landingTransitionRight 1s linear forwards forwards;
+}
+.landingSVGTransition{
+  -webkit-animation: landingSVGTransition 1s linear forwards;
+  -o-animation: landingSVGTransition 1s linear forwards;
+  -mox-animation: landingSVGTransition 1s linear forwards;
+  animation: landingSVGTransition 1s linear forwards forwards;
+}
+.cloudWrapperTransition{
+  -webkit-animation: landingSVGTransition 1s linear forwards;
+  -o-animation: landingSVGTransition 1s linear forwards;
+  -mox-animation: landingSVGTransition 1s linear forwards;
+  animation: landingSVGTransition 1s linear forwards forwards;
+}
+
+@-webkit-keyframes landingTransitionLeft{
+  0% {
+    left: 0px;
+  }
+  100%{
+    left: calc(-52vw);
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes landingTransitionRight{
+  0% {
+    right: 0px;
+  }
+  100%{
+    right: calc(-52vw);
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes landingSVGTransition{
+  0% {
+    opacity: 1;
+  }
+  100%{
+    top: calc(-100vw);
+    opacity: 0;
+    display: none;
+  }
+}
+
 
 .cloudSVG1{
   height: 7vh;
@@ -68,21 +132,21 @@
   top: 20%;
 }
 .cloudSVG2{
-  height: 7.5vh;
-  width: 11.5vw;
+  height: 8vh;
+  width: 10vw;
   top: 10%;
   -webkit-animation-delay: -15s;
   animation-delay: -15s;
 }
 .cloudSVG3{
-  height: 6.5vh;
-  width: 12.5vw;
+  height: 6vh;
+  width: 11vw;
   top: 5%;
   -webkit-animation-delay: -28s;
   animation-delay: -28s;
 }
 .cloudSVG4{
-  height: 6vh;
+  height: 5vh;
   width: 12.5vw;
   top: 20%;
   -webkit-animation-delay: -33s;
@@ -279,3 +343,74 @@
     from {top: calc(0px - 100vh);}
     to {top: calc(0px - 20vh);}
   }
+
+
+  .professionalPage{
+    position: absolute;
+    height: 300vh;
+    width: 100vw;
+    background-color: black;
+    height: auto !important;
+  }
+
+  .professionalPageTransition{
+    opacity: 0;
+    -webkit-animation: fadeIn 1s linear forwards;
+    -o-animation: fadeIn 1s linear forwards;
+    -mox-animation: fadeIn 1s linear forwards;
+    animation: fadeIn 1s linear forwards forwards;
+    animation-delay: 1s;
+  }
+
+  @-webkit-keyframes fadeIn{
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+  }
+
+.section{
+  width: 100vw;
+  height: 100vh;
+  h1{
+    font-size: 50px;
+  }
+}
+
+.section1{
+  background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/C7wpT4M.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .headerWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    .nameWrapper{
+      h1 {
+        font-size: 8em;
+        color: white;
+        font-family: 'Shadows Into Light', cursive;
+        -webkit-animation: fade 2s ease-out forwards;
+      }
+    }
+    .socialWrapper{
+      .fa {
+        margin-left: 10px;
+        margin-right: 10px;
+        color: white;
+        cursor: pointer;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+.section2{
+  background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://imgur.com/KFBoZrN.jpg) no-repeat center center fixed;
+}
+.section3{
+  background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://imgur.com/3knmMeF.jpg) no-repeat center center fixed;
+}
