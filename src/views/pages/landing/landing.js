@@ -170,7 +170,31 @@ scrollTop(){
 
           </div>
           <div className='section section2 flexx'>
-            <h1> Section 2</h1>
+            <div className='portfolio1 portfolio flexx'>
+              <div className='header'>
+                <h1> CoinREX </h1>
+                <h2> REACT | REDUX | SCSS </h2>
+                <h2> JS | ANT D | FIREBASE </h2>
+              </div>
+            </div>
+            <div className='portfolio2 portfolio flexx'>
+              <div className='header'>
+                <h1> Flat Design </h1>
+                <h2> Adobe Illustrator </h2>
+              </div>
+            </div>
+            <div className='portfolio3 portfolio flexx'>
+              <div className='header'>
+                <h1> Photo Editing </h1>
+                <h2> Adobe Illustrator </h2>
+              </div>
+            </div>
+            <div className='portfolio4 portfolio flexx'>
+              <div className='header'>
+                <h1> Logo Design </h1>
+                <h2> Adobe Illustrator </h2>
+              </div>
+            </div>
           </div>
           <div className='section section3 flexx'>
             <h1> Section 3</h1>

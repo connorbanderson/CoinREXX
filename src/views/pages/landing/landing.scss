@@ -409,8 +409,44 @@
   }
 }
 .section2{
-  background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://imgur.com/KFBoZrN.jpg) no-repeat center center fixed;
+  h1, h2{
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+  .portfolio{
+    width: 25vw;
+    height: 100vh;
+    cursor: pointer;
+    .header{
+      width: 100%;
+    }
+  }
+  .portfolio1{
+    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/75qGdga.jpg) no-repeat center center fixed;
+    background-size: 100vw;
+    &:hover{
+      -webkit-animation: portfolioFade .5s linear forwards;
+      -o-animation: portfolioFade .5s linear forwards;
+      -mox-animation: portfolioFade .5s linear forwards;
+      animation: portfolioFade .5s linear forwards;
+    }
+  }
+  .portfolio2{
+    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/ZXWieu2.jpg) no-repeat center center fixed;
+  }
+  .portfolio3{
+    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/Jk7sGYq.jpg) no-repeat center center fixed;
+  }
+  .portfolio4{
+    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/kF8hlih.jpg) no-repeat center center fixed;
+  }
 }
 .section3{
-  background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://imgur.com/3knmMeF.jpg) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/tJKX9Ph.jpg) no-repeat center center fixed;
+}
+
+@-webkit-keyframes portfolioFade{
+  0% {background-size: 100vw;}
+  100%{background-size: 105vw;}
 }
