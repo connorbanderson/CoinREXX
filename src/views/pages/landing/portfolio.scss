@@ -1,0 +1,13 @@
+.professionalPageTransition{
+  opacity: 0;
+  -webkit-animation: fadeIn 1s linear forwards;
+  -o-animation: fadeIn 1s linear forwards;
+  -mox-animation: fadeIn 1s linear forwards;
+  animation: fadeIn 1s linear forwards forwards;
+  animation-delay: 1s;
+}
+
+@-webkit-keyframes fadeIn{
+  0% {opacity: 0;}
+  100%{opacity: 1;}
+}

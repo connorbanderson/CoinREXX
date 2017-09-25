@@ -8,6 +8,10 @@
                                   supported by Chrome and Opera */
 }
 
+.body html{
+  background-color: black;
+}
+
 .flexx{
   display: flex;
   align-items: center;
@@ -31,7 +35,6 @@
   position: relative;
   z-index: 1;
   overflow-x: hidden;
-
   .professionalDiv{
     position: absolute;
     height: 100vh;
@@ -40,7 +43,6 @@
     z-index: 2;
     background-color: #29B6F6;
     cursor: pointer;
-
     &:hover{
       background-color: #4FC3F7;
     }
@@ -58,6 +60,38 @@
     }
   }
 
+  .professionalDivTransition{
+    -webkit-animation: landingTransitionRight 3s linear forwards;
+    -o-animation: landingTransitionRight 3s linear forwards;
+    -mox-animation: landingTransitionRight 3s linear forwards;
+    animation: landingTransitionRight 3s linear forwards;
+  }
+
+  @-webkit-keyframes landingTransitionRight{
+    0% {
+      right: 0px !important;
+    }
+    100%{
+      right: calc(-52vw) !important;
+      background-color: red;
+    }
+  }
+
+  .personalDivTransition{
+    -webkit-animation: landingTransitionLeft 1s linear forwards;
+    -o-animation: landingTransitionLeft 1s linear forwards;
+    -mox-animation: landingTransitionLeft 1s linear forwards;
+    animation: landingTransitionLeft 1s linear forwards;
+  }
+  @-webkit-keyframes landingTransitionLeft{
+    0% {
+      left: 0px;
+    }
+    100%{
+      left: calc(-52vw);
+    }
+  }
+
 
 .cloud{
   position: absolute;
@@ -69,24 +103,9 @@
   z-index: 3;
 }
 
-.personalDivTransition{
-  -webkit-animation: landingTransitionLeft 1s linear forwards;
-  -o-animation: landingTransitionLeft 1s linear forwards;
-  -mox-animation: landingTransitionLeft 1s linear forwards;
-  animation: landingTransitionLeft 1s linear forwards forwards;
-}
-.professionalDivTransition{
-  -webkit-animation: landingTransitionRight 1s linear forwards;
-  -o-animation: landingTransitionRight 1s linear forwards;
-  -mox-animation: landingTransitionRight 1s linear forwards;
-  animation: landingTransitionRight 1s linear forwards forwards;
-}
-.landingSVGTransition{
-  -webkit-animation: landingSVGTransition 1s linear forwards;
-  -o-animation: landingSVGTransition 1s linear forwards;
-  -mox-animation: landingSVGTransition 1s linear forwards;
-  animation: landingSVGTransition 1s linear forwards forwards;
-}
+
+
+
 .cloudWrapperTransition{
   -webkit-animation: landingSVGTransition 1s linear forwards;
   -o-animation: landingSVGTransition 1s linear forwards;
@@ -94,25 +113,13 @@
   animation: landingSVGTransition 1s linear forwards forwards;
 }
 
-@-webkit-keyframes landingTransitionLeft{
-  0% {
-    left: 0px;
-  }
-  100%{
-    left: calc(-52vw);
-    opacity: 0;
-    display: none;
-  }
-}
-@-webkit-keyframes landingTransitionRight{
-  0% {
-    right: 0px;
-  }
-  100%{
-    right: calc(-52vw);
-    opacity: 0;
-    display: none;
-  }
+
+
+.landingSVGTransition{
+  -webkit-animation: landingSVGTransition 1s linear forwards;
+  -o-animation: landingSVGTransition 1s linear forwards;
+  -mox-animation: landingSVGTransition 1s linear forwards;
+  animation: landingSVGTransition 1s linear forwards forwards;
 }
 @-webkit-keyframes landingSVGTransition{
   0% {
@@ -122,6 +129,22 @@
     top: calc(-100vw);
     opacity: 0;
     display: none;
+  }
+}
+
+
+.proTransition{
+  -webkit-animation: proTransition 1s linear forwards;
+  -o-animation: proTransition 1s linear forwards;
+  -mox-animation: proTransition 1s linear forwards;
+  animation: proTransition 1s linear forwards forwards;
+}
+@-webkit-keyframes proTransition{
+  0% {
+    right: 0;
+  }
+  100%{
+    right: calc(-53vw);
   }
 }
 
@@ -349,7 +372,6 @@
     position: absolute;
     height: 300vh;
     width: 100vw;
-    background-color: black;
     height: auto !important;
   }
 
@@ -414,39 +436,59 @@
     text-align: center;
     color: white;
   }
-  .portfolio{
+  .portfolioWrapper{
+    position: relative;
     width: 25vw;
     height: 100vh;
-    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .header{
+      position: absolute;
       width: 100%;
     }
   }
+  .portfolio{
+    position: relative;
+    width: 25vw;
+    height: 100vh;
+    cursor: pointer;
+    transition: all 1s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    &:hover{
+      transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1); /* IE 9 */
+    }
+
+  }
   .portfolio1{
     background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/75qGdga.jpg) no-repeat center center fixed;
-    background-size: 100vw;
-    &:hover{
-      -webkit-animation: portfolioFade .5s linear forwards;
-      -o-animation: portfolioFade .5s linear forwards;
-      -mox-animation: portfolioFade .5s linear forwards;
-      animation: portfolioFade .5s linear forwards;
-    }
+    width: 100%;
+    height: 100vh;
   }
   .portfolio2{
     background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/ZXWieu2.jpg) no-repeat center center fixed;
+    width: 100%;
+    height: 100vh;
   }
   .portfolio3{
     background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/Jk7sGYq.jpg) no-repeat center center fixed;
+    width: 100%;
+    height: 100vh;
   }
   .portfolio4{
-    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/kF8hlih.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/kF8hlih.jpg) no-repeat center center  fixed;
+    width: 100%;
+    height: 100vh;
   }
 }
 .section3{
   background: linear-gradient(rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)), url(https://i.imgur.com/tJKX9Ph.jpg) no-repeat center center fixed;
-}
-
-@-webkit-keyframes portfolioFade{
-  0% {background-size: 100vw;}
-  100%{background-size: 105vw;}
 }

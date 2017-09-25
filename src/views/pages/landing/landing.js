@@ -9,6 +9,7 @@ import { Input } from 'semantic-ui-react'
 import { Button } from 'antd'
 import $ from 'jquery';
 import './landing.css';
+import './portfolio.css'
 import 'public/cbalogoentrance.svg'
 
 
@@ -96,17 +97,6 @@ scrollTop(){
       'hidden': this.state.isHidden,
       'flexx': true
     })
-
-    let personalDiv = classNames({
-      'personalDiv':  true,
-      'personalDivTransition': this.state.transition,
-      'flexx': true
-    })
-    let professionalDiv = classNames({
-      'professionalDiv': true,
-      'professionalDivTransition': this.state.transition,
-      'flexx': true
-    })
     let landingSVG = classNames({
       'landingSVG': true,
       'landingSVGTransition': this.state.transition,
@@ -126,6 +116,17 @@ scrollTop(){
       'flexx': true
     })
 
+
+    let professionalDiv = classNames({
+      'professionalDiv': true,
+      'proTransition': this.state.transition,
+      'flexx': true
+    })
+    let personalDiv = classNames({
+      'personalDiv':  true,
+      'personalDivTransition': this.state.transition,
+      'flexx': true
+    })
     var loginButton = $('loginButton');
     loginButton.css({ 'opacity': 0 });
 
@@ -134,12 +135,15 @@ scrollTop(){
 
 
         <img className={landingSVG} src='/landingMeteor.svg'></img>
+
         <div className={personalDiv} onClick={()=>{this.setState({ transition: true })}}>
           <img className='personalSVG' src='/personalIsland2.svg'></img>
         </div>
+
         <div className={professionalDiv} onClick={()=>{this.setState({ transition: true })}}>
           <img className='professionalSVG' src='/professionalIsland4.svg'></img>
         </div>
+
         <div className={cloudWrapper}>
           <img className='cloud cloudSVG1' src='/cloud1.svg'></img>
           <img className='cloud cloudSVG2' src='/cloud2.svg'></img>
@@ -170,31 +174,40 @@ scrollTop(){
 
           </div>
           <div className='section section2 flexx'>
-            <div className='portfolio1 portfolio flexx'>
+
+            <div className='portfolioWrapper'>
+              <div className='portfolio1 portfolio flexx' />
               <div className='header'>
                 <h1> CoinREX </h1>
                 <h2> REACT | REDUX | SCSS </h2>
                 <h2> JS | ANT D | FIREBASE </h2>
               </div>
             </div>
-            <div className='portfolio2 portfolio flexx'>
+
+            <div className='portfolioWrapper'>
+              <div className='portfolio2 portfolio flexx' />
               <div className='header'>
                 <h1> Flat Design </h1>
                 <h2> Adobe Illustrator </h2>
               </div>
             </div>
-            <div className='portfolio3 portfolio flexx'>
+
+            <div className='portfolioWrapper'>
+              <div className='portfolio3 portfolio flexx' />
               <div className='header'>
                 <h1> Photo Editing </h1>
                 <h2> Adobe Illustrator </h2>
               </div>
             </div>
-            <div className='portfolio4 portfolio flexx'>
+
+            <div className='portfolioWrapper'>
+              <div className='portfolio4 portfolio flexx' />
               <div className='header'>
                 <h1> Logo Design </h1>
                 <h2> Adobe Illustrator </h2>
               </div>
             </div>
+
           </div>
           <div className='section section3 flexx'>
             <h1> Section 3</h1>
