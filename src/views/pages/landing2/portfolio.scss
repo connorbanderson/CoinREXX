@@ -1,0 +1,68 @@
+.landingBody{
+  width: 100%;
+  margin: 0;
+  border: 0;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
+  .professionalDiv{
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    right: 0px;
+    z-index: 2;
+    background-color: #29B6F6;
+    cursor: pointer;
+    &:hover{
+      background-color: #4FC3F7;
+    }
+  }
+  .personalDiv{
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    left: 0px;
+    z-index: 2;
+    background-color: #29B6F6;
+    cursor: pointer;
+    &:hover{
+      background-color: #4FC3F7;
+    }
+  }
+}
+
+  .cloud{
+    position: absolute;
+    left: 0px;
+    -webkit-animation: moveAcross 40s linear infinite;
+    -o-animation: moveAcross 40s linear infinite;
+    -mox-animation: moveAcross 40s linear infinite;
+    animation: moveAcross 40s linear forwards infinite;
+    z-index: 3;
+  }
+  @-webkit-keyframes moveAcross{
+    0% {
+      left: calc(-10vw);
+    }
+    100%{
+      left: calc(110vw);
+    }
+  }
+  .cloudWrapperTransition{
+    -webkit-animation: landingSVGTransition 1s linear forwards;
+    -o-animation: landingSVGTransition 1s linear forwards;
+    -mox-animation: landingSVGTransition 1s linear forwards;
+    animation: landingSVGTransition 1s linear forwards forwards;
+  }
+  @-webkit-keyframes landingSVGTransition{
+    0% {
+      opacity: 1;
+    }
+    100%{
+      top: calc(-100vw);
+      opacity: 0;
+      display: none;
+    }
+  }

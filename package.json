@@ -44,6 +44,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.10",
     "react-scroll": "^1.5.4",
+    "react-timeout": "^1.0.1",
     "react-transition-group": "^1.2.0",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
