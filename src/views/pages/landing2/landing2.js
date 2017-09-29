@@ -11,10 +11,10 @@ import { Transition } from 'react-transition-group';
 import { ReactTimeout } from 'react-timeout'
 
 import $ from 'jquery';
-import './portfolio.css'
 import 'public/cbalogoentrance.svg'
 
-
+import './entrance.css'
+import './professional.css'
 
 
 
@@ -72,7 +72,7 @@ unmountLandingPage = () => {
 handleUnmount = (e) => {
   console.log('indside handleUnmount');
   this.setState({transition: true})
-  setTimeout(() => {this.setState({selectionMade: true})}, 3000)
+  setTimeout(() => {this.setState({selectionMade: true})}, 1000)
 }
 
   entrance = () =>{
@@ -120,7 +120,74 @@ handleUnmount = (e) => {
         </div>
       </div>
     )
-    else return
+    else return(
+      <div className='portfolioBooty'>
+
+        <div className='navbarTopBefore'>
+          <h1 className='leftHeader'> CA </h1>
+        </div>
+
+        <div className='pageOne noselect'>
+          <div className='background' />
+          <div className='innerContent flexx'>
+
+          <div className='headerWrapper'>
+            <div className='nameWrapper'>
+              <h1 className='noselect'>Connor Anderson</h1>
+            </div>
+            <div className='socialWrapper'>
+              <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
+                <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
+              </a>
+              <a href="https://www.instagram.com/krnzsti/">
+                <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
+              </a>
+              <a href="https://github.com/connorbanderson">
+                <i  className="fa fa-github fa-5x" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+        <div className='pageTwo'>
+
+          <div className='portfolioWrapper'>
+            <div className='portfolio1 portfolio flexx' />
+            <div className='header'>
+              <h1> CoinREX </h1>
+              <h2> REACT | REDUX | SCSS </h2>
+              <h2> JS | ANT D | FIREBASE </h2>
+            </div>
+          </div>
+
+          <div className='portfolioWrapper flexx'>
+            <div className='portfolio2 portfolio flexx' />
+            <div className='header noselect'>
+              <h1> Flat Design </h1>
+              <h2> Adobe Illustrator </h2>
+            </div>
+          </div>
+
+          <div className='portfolioWrapper flexx'>
+            <div className='portfolio3 portfolio flexx' />
+            <div className='header noselect'>
+              <h1> Photo Editing </h1>
+              <h2> Adobe Illustrator </h2>
+            </div>
+          </div>
+
+          <div className='portfolioWrapper flexx'>
+            <div className='portfolio4 portfolio flexx' />
+            <div className='header noselect'>
+              <h1> Logo Design </h1>
+              <h2> Adobe Illustrator </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   render () {
