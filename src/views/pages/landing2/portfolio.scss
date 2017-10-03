@@ -1,0 +1,46 @@
+.portfolioPage{
+  animation: fadeIn 2s ease forwards;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  .fa{
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: black;
+    z-index: 3
+  }
+  .p{
+    position: relative;
+    width: 50%;
+    height: 50vh;
+  }
+  .p1{
+    background-color: red;
+  }
+  .p2{
+    background-color: purple;
+  }
+  .p3{
+    background-color: blue;
+  }
+  .p4{
+    background-color: pink;
+  }
+  .p5{
+    background-color: teal;
+  }
+  .p6{
+    background-color: yellow;
+  }
+  .p7{
+    background-color: green;
+  }
+  .p8{
+    background-color: brown;
+  }
+}

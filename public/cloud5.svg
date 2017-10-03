@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E9E9E9;}
+	.st1{font-family: 'Doris', sans-serif;}
+	.st1weight{font-weight: bold;}
+	.st2{font-size:18.24px;}
+	.st3{font-family:'JejuGothic';}
+	.st4{font-size:23px;}
+
+	.bar1 {
+	 -webkit-animation: rotate1 2s ease-in forwards;
+	 -o-animation: rotate1 2s ease-in forwards;
+	 -mox-animation: rotate1 2s ease-in forwards;
+	 -webkit-transform-origin: 50% 50%;
+	 -moz-transform-origin: 50% 50%;
+	 -o-transform-origin: 50% 50%;
+	 animation: rotate1 2s ease-in forwards;
+	 transform-origin: 50% 50%;
+	 opacity: 0 ;
+	}
+	.bar2 {
+	-webkit-animation: rotate2 2s ease-in forwards;
+	-o-animation: rotate2 2s ease-in forwards;
+	-mox-animation: rotate2 2s ease-in forwards;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	-o-transform-origin: 50% 50%;
+	animation: rotate2 2s ease-in forwards;
+	transform-origin: 50% 50%;
+	opacity: 0 ;
+	}
+	.text{
+	-webkit-animation: fadein 2s ease-in forwards;
+	-o-animation: fadein 2s ease-in forwards;
+	-mox-animation: fadein 2s ease-in forwards;
+	animation: fadein 2s ease-in forwards;
+	opacity: 0;
+	}
+
+@keyframes rotate1 {
+		0% {
+			transform: rotate(0deg);
+		}
+		0%{
+			opacity: 0;
+			transform: rotate(0deg);
+		}
+		100%{
+			opacity: 1;
+			transform: rotate(45deg);
+		}
+}
+
+@keyframes rotate2 {
+		0% {
+			transform: rotate(0deg);
+		}
+		30%{
+			opacity: 0;
+			transform: rotate(0deg);
+		}
+		100%{
+			opacity: 1;
+			transform: rotate(-45deg);
+		}
+	}
+	@keyframes fadein {
+			60%{
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+</style>d
+
+<g>
+	<rect x="-9.6" y="30.2" class="bar1 st0" width="83.3" height="2.7"/>
+</g>
+<g>
+	<rect x="-9.6" y="30.2" class="bar2 st0" width="83.3" height="2.7"/>
+</g>
+<text transform="matrix(1 0 0 1 25.5923 16.5278)" class="text st0 st1 st1weight st2">C</text>
+<text transform="matrix(1 0 0 1 -1.4478 39.6563)" class="text st0 st3 st4">ㅋ</text>
+<text transform="matrix(1 0 0 1 25.5923 57.6963)" class="text st0 st1 st1weight st2">A</text>
+<text transform="matrix(1 0 0 1 42.5674 38.6563)" class="text st0 st3 st4">ㅇ</text>
+
+</svg>

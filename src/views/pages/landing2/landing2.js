@@ -15,7 +15,7 @@ import 'public/cbalogoentrance.svg'
 
 import './entrance.css'
 import './professional.css'
-
+import './portfolio.css'
 
 
 class Landing2 extends React.Component {
@@ -26,7 +26,7 @@ class Landing2 extends React.Component {
     this.state = {
       isHidden: true,
       transition: false,
-      selectionMade: false
+      selectionMade: 'entered'
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -62,7 +62,10 @@ scrollTop(){
   let scroll = Scroll.animateScroll;
   scroll.scrollTo(0, 2000)
 }
-
+scrollTopInsta(){
+  let scroll = Scroll.animateScroll;
+  scroll.scrollTo(0, 500)
+}
 
 unmountLandingPage = () => {
   console.log('indside unmountLandingPage');
@@ -73,6 +76,13 @@ handleUnmount = (e) => {
   console.log('indside handleUnmount');
   this.setState({transition: true})
   setTimeout(() => {this.setState({selectionMade: true})}, 1000)
+}
+
+viewPortfolio = () =>{
+  this.setState({ selectionMade: 'viewPortfolio' })
+}
+closePortfolio = () =>{
+  this.setState({ selectionMade: 'entered' })
 }
 
   entrance = () =>{
@@ -103,7 +113,7 @@ handleUnmount = (e) => {
       'personalDivTransition': this.state.transition,
       'flexx': true
     })
-    if (!this.state.selectionMade) return(
+    if (this.state.selectionMade == 'landing') return(
       <div className={landingBody} >
         <img className={landingSVG} src='/landingMeteor.svg'></img>
         <div className={personalDiv} onClick={this.handleUnmount}>
@@ -120,71 +130,121 @@ handleUnmount = (e) => {
         </div>
       </div>
     )
-    else return(
+    else if (this.state.selectionMade == 'entered') return(
       <div className='portfolioBooty'>
-
-        <div className='navbarTopBefore'>
-          <h1 className='leftHeader'> CA </h1>
+        <div className='navbarTopBefore noselect'>
+          <div onClick={()=>{this.scrollTop()}} className='leftHeader'>
+            <img src='/cloud5.svg' />
+          </div>
+          <div className='rightHeader'>
+              <h3> About Me </h3>
+              <h3> Portfolio </h3>
+              <h3> Education </h3>
+              <h3> Learn More </h3>
+          </div>
         </div>
 
         <div className='pageOne noselect'>
           <div className='background' />
           <div className='innerContent flexx'>
-
-          <div className='headerWrapper'>
-            <div className='nameWrapper'>
-              <h1 className='noselect'>Connor Anderson</h1>
+            <div className='headerWrapper'>
+              <img className='centerLogo' src='/cloud5.svg' />
+              <div className='socialWrapper'>
+                <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
+                  <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
+                </a>
+                <a href="https://www.instagram.com/krnzsti/">
+                  <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
+                </a>
+                <a href="https://github.com/connorbanderson">
+                  <i  className="fa fa-github fa-5x" aria-hidden="true" />
+                </a>
+              </div>
             </div>
-            <div className='socialWrapper'>
-              <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
-                <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
-              </a>
-              <a href="https://www.instagram.com/krnzsti/">
-                <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
-              </a>
-              <a href="https://github.com/connorbanderson">
-                <i  className="fa fa-github fa-5x" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-
-
           </div>
         </div>
+
         <div className='pageTwo'>
-
           <div className='portfolioWrapper'>
-            <div className='portfolio1 portfolio flexx' />
-            <div className='header'>
-              <h1> CoinREX </h1>
-              <h2> REACT | REDUX | SCSS </h2>
-              <h2> JS | ANT D | FIREBASE </h2>
+            <div className='headerWrapper'>
+              <h1>About Me</h1>
             </div>
+            <div className='paraWrapper'>
+              <p>
+                This website is a passion project to to show my recent projects, my interests, both related to front end web development and my life in general.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className='pageThree'>
+          <img className='coinRexLogo' src='/coinrexlogoBnoa.svg' />
+
+          <div className='s1 flexx'>
+            <Link to={`/dashboard`} className='nodecoration flexx'>
+              <div className='head noselect'>
+                <h1> Coin REX</h1>
+                <h2> REACT | REDUX </h2>
+                <h3> FIREBASE (Coming Soon) </h3>
+              </div>
+            </Link>
           </div>
 
-          <div className='portfolioWrapper flexx'>
-            <div className='portfolio2 portfolio flexx' />
-            <div className='header noselect'>
-              <h1> Flat Design </h1>
-              <h2> Adobe Illustrator </h2>
-            </div>
+
+          <div className='s2 flexx' onClick={()=>{ {this.viewPortfolio()} {this.scrollTopInsta()} }}>
+              <img className='piece2' src='/space2.svg' />
+              <div className='head noselect'>
+                <h1> Flat Design </h1>
+                <h2> Adobe Illustrator </h2>
+              </div>
           </div>
 
-          <div className='portfolioWrapper flexx'>
-            <div className='portfolio3 portfolio flexx' />
-            <div className='header noselect'>
-              <h1> Photo Editing </h1>
-              <h2> Adobe Illustrator </h2>
-            </div>
-          </div>
 
-          <div className='portfolioWrapper flexx'>
-            <div className='portfolio4 portfolio flexx' />
-            <div className='header noselect'>
-              <h1> Logo Design </h1>
-              <h2> Adobe Illustrator </h2>
-            </div>
+        </div>
+
+        <div className='pageFour'>
+          <img className='map' src='/map2.svg' />
+        </div>
+
+        <div className='pageFive'>
+          <div className="svg-wrapper">
+            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+              <rect className="shape" height="60" width="320" />
+            </svg>
+            <div className="text">Learn More</div>
           </div>
+        </div>
+
+      </div>
+    )
+    else if (this.state.selectionMade == 'viewPortfolio') return (
+      <div className='portfolioPage'>
+        <i onClick={()=>{this.closePortfolio()}}
+            className="fa fa-5x fa-window-close" aria-hidden="true" />
+
+        <div className='p p1'>
+
+        </div>
+        <div className='p p2'>
+
+        </div>
+        <div className='p p3'>
+
+        </div>
+        <div className='p p4'>
+
+        </div>
+        <div className='p p5'>
+
+        </div>
+        <div className='p p6'>
+
+        </div>
+        <div className='p p7'>
+
+        </div>
+        <div className='p p8'>
+
         </div>
       </div>
     )
@@ -196,10 +256,17 @@ handleUnmount = (e) => {
 
     return (
       <div className='theBody'>
-      {this.entrance()}
+        {this.entrance()}
       </div>
     )
   }
 }
 
 export default Landing2
+
+/*
+
+<Link to={`/dashboard`} className='nodecoration'>
+
+
+*/
