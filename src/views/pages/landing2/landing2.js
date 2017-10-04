@@ -151,13 +151,13 @@ closePortfolio = () =>{
               <img className='centerLogo' src='/cloud5.svg' />
               <div className='socialWrapper'>
                 <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
-                  <i className="fa fa-linkedin-square fa-5x" aria-hidden="true" />
+                  <i className="fa fa-linkedin-square fa-4x" aria-hidden="true" />
                 </a>
                 <a href="https://www.instagram.com/krnzsti/">
-                  <i  className="fa fa-instagram fa-5x" aria-hidden="true" />
+                  <i  className="fa fa-instagram fa-4x" aria-hidden="true" />
                 </a>
                 <a href="https://github.com/connorbanderson">
-                  <i  className="fa fa-github fa-5x" aria-hidden="true" />
+                  <i  className="fa fa-github fa-4x" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -181,6 +181,7 @@ closePortfolio = () =>{
           <img className='coinRexLogo' src='/coinrexlogoBnoa.svg' />
 
           <div className='s1 flexx'>
+            <img className='stacks' src='/coinrexStacks.svg' />
             <Link to={`/dashboard`} className='nodecoration flexx'>
               <div className='head noselect'>
                 <h1> Coin REX</h1>

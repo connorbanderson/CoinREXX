@@ -165,12 +165,14 @@ $paragraph: 'Gentium Basic', serif;
         }
       }
       .socialWrapper{
+        margin-top: 50px;
         .fa {
           margin-left: 10px;
           margin-right: 10px;
-          color: white;
+          color: #BDBDBD;
           cursor: pointer;
           &:hover{
+            color: #F5F5F5;
             transform: scale(1.1);
           }
         }
@@ -272,7 +274,11 @@ $paragraph: 'Gentium Basic', serif;
       width: 50%;
       height: 100%;
       background-color: #FFECB3;
-
+      .stacks{
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+      }
       a{
         position: absolute !important;
         width: 100% !important;
