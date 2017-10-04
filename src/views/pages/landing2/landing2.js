@@ -203,7 +203,7 @@ closePortfolio = () =>{
         </div>
 
         <div className='pageFour'>
-          <img className='map' src='/map2.svg' />
+          <img className='map' src='/map3.svg' />
         </div>
 
         <div className='pageFive'>
