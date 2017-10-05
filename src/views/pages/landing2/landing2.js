@@ -9,7 +9,7 @@ import { Input } from 'semantic-ui-react'
 import { Button } from 'antd'
 import { Transition } from 'react-transition-group';
 import { ReactTimeout } from 'react-timeout'
-
+import SimpleMap from './calgaryMap.js'
 import $ from 'jquery';
 import 'public/cbalogoentrance.svg'
 
@@ -113,6 +113,8 @@ closePortfolio = () =>{
       'personalDivTransition': this.state.transition,
       'flexx': true
     })
+
+
     if (this.state.selectionMade == 'landing') return(
       <div className={landingBody} >
         <img className={landingSVG} src='/landingMeteor.svg'></img>
@@ -208,11 +210,8 @@ closePortfolio = () =>{
         </div>
 
         <div className='pageFive'>
-          <div className="svg-wrapper">
-            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-              <rect className="shape" height="60" width="320" />
-            </svg>
-            <div className="text">Learn More</div>
+          <div className='mapWrapper' style={{width: '100%', height: '400px'}}>
+            <SimpleMap />
           </div>
         </div>
 
@@ -266,6 +265,17 @@ closePortfolio = () =>{
 export default Landing2
 
 /*
+
+
+let mapOptions = {
+zoom: 11,
+center: new google.maps.LatLng(39.742043, -104.991531), // Denver
+disableDefaultUI: true,
+styles: [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}]
+}
+let mapElement = document.getElementById('map');
+let map = new google.maps.Map(mapElement, mapOptions);
+
 
 <Link to={`/dashboard`} className='nodecoration'>
 
