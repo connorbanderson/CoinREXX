@@ -10,11 +10,11 @@
 	.st1on{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 	.st2on{opacity:0.6;fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	#off{
-		animation: fadeOut 3s linear forwards;
+		animation: fadeOut 1.5s linear infinite;
 		opacity: 1;
 	}
 	#on{
-		animation: fadeIn 3s linear forwards;
+		animation: fadeIn 1.5s linear infinite;
 		opacity: 0;
 	}
 
@@ -27,6 +27,12 @@
 		}
 		50%{
 		opacity: .5;
+		}
+		80%{
+			opacity: .8;
+		}
+		90%{
+			opacity: .2;
 		}
 		100%{
 			opacity: 0;
@@ -42,6 +48,12 @@
 		}
 		50%{
 		opacity: .5;
+		}
+		80%{
+			opacity: .2;
+		}
+		90%{
+			opacity: .8;
 		}
 		100%{
 			opacity: 1;
