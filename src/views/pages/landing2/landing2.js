@@ -150,7 +150,7 @@ closePortfolio = () =>{
           <div className='background' />
           <div className='innerContent flexx'>
             <div className='headerWrapper'>
-              <img className='centerLogo' src='/cloud5.svg' />
+              <img className='centerLogo' src='/cloud69.svg' />
               <div className='socialWrapper'>
                 <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
                   <i className="fa fa-linkedin-square fa-4x" aria-hidden="true" />
