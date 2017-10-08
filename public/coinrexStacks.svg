@@ -20,7 +20,7 @@
 
 
  .coin1{
-	 	animation: stackDown1 2s ease-out forwards;
+	 	animation:  2s ease-out forwards;
 		animation-delay: 1s;
 		opacity: 0;
 		opacity: 0;

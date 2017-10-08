@@ -135,14 +135,33 @@ closePortfolio = () =>{
     else if (this.state.selectionMade == 'entered') return(
       <div className='portfolioBooty'>
         <div className='navbarTopBefore noselect'>
+          <img className='topBar' src='/topBar.svg' />
+
           <div onClick={()=>{this.scrollTop()}} className='leftHeader'>
-            <img src='/cloud5.svg' />
+            <img src='/tlHeader.svg' />
           </div>
           <div className='rightHeader'>
-              <h3> About Me </h3>
-              <h3> Portfolio </h3>
-              <h3> Education </h3>
-              <h3> Learn More </h3>
+
+            <div className='onOffWrapper headetextonoff'>
+              <img className='headertext onpush on' src='/aboutMeOn.svg' />
+              <img className='headertext off' src='/aboutMeOff.svg' />
+            </div>
+
+            <div className='onOffWrapper headetextonoff'>
+              <img className='headertext onpush on' src='/workOn.svg' />
+              <img className='headertext off' src='/workOff.svg' />
+            </div>
+
+            <div className='onOffWrapper headetextonoff'>
+              <img className='picstext onpush on' src='/picsOn.svg' />
+              <img className='picstext off' src='/picsOff.svg' />
+            </div>
+
+            <div className='onOffWrapper headetextonoff'>
+              <img className='moretext onpush on' src='/moreOn.svg' />
+              <img className='moretext off' src='/moreOff.svg' />
+            </div>
+
           </div>
         </div>
 
@@ -153,13 +172,22 @@ closePortfolio = () =>{
               <img className='centerLogo' src='/cloud69.svg' />
               <div className='socialWrapper'>
                 <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
-                  <i className="fa fa-linkedin-square fa-4x" aria-hidden="true" />
+                  <div className='onOffWrapper'>
+                    <img className='socialSVG off' src='/linkedinOff.svg' />
+                    <img className='socialSVG on' src='/linkedinOn.svg' />
+                  </div>
                 </a>
                 <a href="https://www.instagram.com/krnzsti/">
-                  <i  className="fa fa-instagram fa-4x" aria-hidden="true" />
+                  <div className='onOffWrapper'>
+                    <img className='socialSVG off' src='/instaOff.svg' />
+                    <img className='socialSVG on' src='/instaOn.svg' />
+                  </div>
                 </a>
                 <a href="https://github.com/connorbanderson">
-                  <i  className="fa fa-github fa-4x" aria-hidden="true" />
+                  <div className='onOffWrapper'>
+                    <img className='socialSVG off' src='/githubOff.svg' />
+                    <img className='socialSVG on' src='/githubOn.svg' />
+                  </div>
                 </a>
               </div>
             </div>
@@ -168,14 +196,22 @@ closePortfolio = () =>{
 
         <div className='pageTwo'>
           <div className='portfolioWrapper'>
-            <div className='headerWrapper'>
-              <h1>About Me</h1>
+
+            <div className='headerWrapper flexx'>
+              <h1>Hi.</h1>
+              <p> I am a web desiginer / developer based in Calgary, Candada. I have a strong passion
+              for building responsive websites for all devices. </p>
             </div>
+
             <div className='paraWrapper'>
+              <h1>I Can Help.</h1>
+              <h2> Available for Freelance Work.</h2>
               <p>
-                This website is a passion project to to show my recent projects, my interests, both related to front end web development and my life in general.
+                If you have an idea or project that requires a website dont hesistate to reach out.
+                Please check out my work to see the varieties of styles I have played with.
               </p>
             </div>
+
           </div>
         </div>
 
@@ -197,8 +233,8 @@ closePortfolio = () =>{
           <div className='s2 flexx' onClick={()=>{ {this.viewPortfolio()} {this.scrollTopInsta()} }}>
               <img className='piece2' src='/space2.svg' />
               <div className='head noselect'>
-                <h1> Flat Design </h1>
-                <h2> Adobe Illustrator </h2>
+                <h1> Design Portfolio </h1>
+                <h2> Adobe Illustrator | Photoshop </h2>
               </div>
           </div>
 
@@ -279,5 +315,27 @@ let map = new google.maps.Map(mapElement, mapOptions);
 
 <Link to={`/dashboard`} className='nodecoration'>
 
+
+
+<div className='pageTwo'>
+  <div className='portfolioWrapper'>
+
+    <div className='headerWrapper flexx'>
+      <h1>Hi.</h1>
+      <p> I am a web desiginer / developer based in Calgary, Candada. I have a strong passion
+      for building responsive websites for all devices. </p>
+    </div>
+
+    <div className='paraWrapper'>
+      <h1>I Can Help.</h1>
+      <h2> Available for Freelance Work.</h2>
+      <p>
+        If you have an idea or project that requires a website dont hesistate to reach out.
+        Please check out my work to see the varieties of styles I have played with.
+      </p>
+    </div>
+
+  </div>
+</div>
 
 */

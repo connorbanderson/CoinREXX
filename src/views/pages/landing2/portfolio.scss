@@ -1,3 +1,54 @@
+
+.onOffWrapper{
+  overflow: hidden;
+}
+.socialSVG{
+  height: 60px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.headetextonoff{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.onpush{
+  margin-top: 5px;
+}
+
+.onOffWrapper .on{
+  display: none;
+}
+
+.onOffWrapper:hover .on{
+  display: block;
+  margin-bottom: 4px;
+}
+.onOffWrapper:hover .off{
+  display: none;
+}
+.headertext{
+  height: 55px !important;
+  width: 100%;
+  cursor: pointer !important;
+}
+.picstext{
+  height: 55px !important;
+  width: 66%;
+  cursor: pointer !important;
+}
+
+.moretext{
+  height: 55px !important;
+  width: 90% !important;
+  cursor: pointer !important;
+}
+
+
+
+
+
+
 .portfolioPage{
   animation: fadeIn 2s ease forwards;
   position: relative;
