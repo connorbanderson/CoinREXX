@@ -114,6 +114,8 @@ closePortfolio = () =>{
       'flexx': true
     })
 
+    let hiParagraph = "I'm a web developer & desiginer based in Calgary, Candada. I have a passion for simple websites with unique designes."
+    let helpParagraph = "Please check out my work section as it shows both my creative and techical side. Let's create something memorable!"
 
     if (this.state.selectionMade == 'landing') return(
       <div className={landingBody} >
@@ -138,7 +140,7 @@ closePortfolio = () =>{
           <img className='topBar' src='/topBar.svg' />
 
           <div onClick={()=>{this.scrollTop()}} className='leftHeader'>
-            <img src='/tlHeader.svg' />
+            <img src='/tlHeaderOff.svg' />
           </div>
           <div className='rightHeader'>
 
@@ -199,16 +201,13 @@ closePortfolio = () =>{
 
             <div className='headerWrapper flexx'>
               <h1>Hi.</h1>
-              <p> I am a web desiginer / developer based in Calgary, Candada. I have a strong passion
-              for building responsive websites for all devices. </p>
+              <p> {hiParagraph} </p>
             </div>
 
             <div className='paraWrapper'>
-              <h1>I Can Help.</h1>
-              <h2> Available for Freelance Work.</h2>
+              <h2>I Can Help.</h2>
               <p>
-                If you have an idea or project that requires a website dont hesistate to reach out.
-                Please check out my work to see the varieties of styles I have played with.
+                {helpParagraph}
               </p>
             </div>
 

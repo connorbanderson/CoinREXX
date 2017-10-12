@@ -67,15 +67,17 @@
   }
   .p{
     position: relative;
-    width: 50%;
-    height: 50vh;
+    width: 100%;
+    height: 100vh;
   }
   .p1{
-    background-color: red;
+    background: url(https://i.imgur.com/ds7oGHh.jpg) no-repeat center center fixed;
+    background-size: cover;
+
   }
   .p2{
-    background-color: purple;
-  }
+    background: url(https://i.imgur.com/APj6lFv.jpg) no-repeat center center fixed;
+    background-size: cover;  }
   .p3{
     background-color: blue;
   }

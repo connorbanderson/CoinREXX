@@ -20,13 +20,13 @@ import FourohFour from '../pages/dashboard/components/Dashboard404';
 
 const App = ({authenticated, signOut}) => (
   <div>
-      <RequireAuthRoute authenticated={authenticated} exact path="/" component={TasksPage}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/sign-in" component={SignInPage}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/connor" component={ConnorPage}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/landing" component={LandingPage}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/landing2" component={LandingPage2}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/user" component={User}/>
-      <RequireUnauthRoute authenticated={authenticated} path="/dashboard" component={Dashboard}/>
+      <RequireAuthRoute authenticated={false} exact path="/" component={TasksPage}/>
+      <RequireUnauthRoute authenticated={false} path="/sign-in" component={SignInPage}/>
+      <RequireUnauthRoute authenticated={false} path="/connor" component={ConnorPage}/>
+      <RequireUnauthRoute authenticated={false} path="/landing" component={LandingPage}/>
+      <RequireUnauthRoute authenticated={false} path="/landing2" component={LandingPage2}/>
+      <RequireUnauthRoute authenticated={false} path="/user" component={User}/>
+      <RequireUnauthRoute authenticated={false} path="/dashboard" component={Dashboard}/>
   </div>
 )
 

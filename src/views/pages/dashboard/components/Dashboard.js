@@ -39,7 +39,7 @@ class Dashboard extends Component {
   }
 
   componentWillMount(){
-    setInterval(this.getBitcoin(this.props, this), 300000);
+    this.getBitcoin(this.props, this)
   }
 
   toggleCollapsed = () => {
@@ -49,7 +49,7 @@ class Dashboard extends Component {
   }
 
   getBitcoin(thegoods, othergoods) {
-    return $.getJSON('https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=200')
+    return $.getJSON('https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=250')
       .then((data) => {
         let newObject = {}
         data.forEach(function(item, i){

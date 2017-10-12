@@ -31,7 +31,7 @@ class DashboardTop extends Component {
   }
 
   getBitcoin(thegoods, othergoods) {
-    return $.getJSON('https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=200')
+    return $.getJSON('https://api.coinmarketcap.com/v1/ticker/?convert=CAD&limit=300')
       .then((data) => {
         let newObject = {}
         data.forEach(function(item, i){
