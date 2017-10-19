@@ -23,10 +23,14 @@ class Landing2 extends React.Component {
   constructor( props ){
     super(props)
     console.log('het there state is', this.state);
+    let screenMax = Math.max( document.body.scrollHeight, document.body.offsetHeight,
+                 document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) / 2
     this.state = {
       isHidden: true,
       transition: false,
-      selectionMade: 'entered'
+      selectionMade: 'entered',
+      screenMax: screenMax,
+      isAboutActive: false
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -38,11 +42,19 @@ class Landing2 extends React.Component {
   handleScroll(e){
     let kappa = Math.max( document.body.scrollHeight, document.body.offsetHeight,
                  document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) / 2
-    if (window.scrollY > (kappa/2)) {
-      this.setState({ isHidden: false })
+    console.log('scrollY is', window.scrollY);
+    console.log('kappa is', kappa);
+    console.log('first value is..',( kappa / 2.145 ) );
+    console.log('second value is..',( kappa / 1.116 ) );
+    let aboutMin = kappa / 2.145
+    let aboutMax = kappa / 1.116
+    let scrollPosition = window.scrollY
+    if ( scrollPosition >= aboutMin &&  scrollPosition <= aboutMax ) {
+      console.log('ISABOUTACTIVE SHOULD BE LIVE!!!');
+      this.setState({ isAboutActive: true })
     }
-    else if (window.scrollY < (kappa/2)) {
-      this.setState({ isHidden: true })
+    else {
+      this.setState({ isAboutActive: false })
     }
   }
 
@@ -114,8 +126,17 @@ closePortfolio = () =>{
       'flexx': true
     })
 
+    let aboutMeOn = classNames({
+       'navBarHeaderActive': this.state.isAboutActive,
+       'navBarHeaderInactive': !this.state.isAboutActive
+    })
+    let aboutMeOff = classNames({
+       'navBarHeaderActive': !this.state.isAboutActive,
+       'navBarHeaderInactive': this.state.isAboutActive
+    })
+
     let hiParagraph = "I'm a web developer & desiginer based in Calgary, Candada. I have a passion for simple websites with unique designes."
-    let helpParagraph = "Please check out my work section as it shows both my creative and techical side. Let's create something memorable!"
+    let helpParagraph = "Please check out my work section as it shows both my creative and techical sides. Let's create something memorable!"
 
     if (this.state.selectionMade == 'landing') return(
       <div className={landingBody} >
@@ -145,9 +166,15 @@ closePortfolio = () =>{
           <div className='rightHeader'>
 
             <div className='onOffWrapper headetextonoff'>
-              <img className='headertext onpush on' src='/aboutMeOn.svg' />
-              <img className='headertext off' src='/aboutMeOff.svg' />
+              <div className={aboutMeOn}>
+                <img className='headertext' src='/aboutMeOn.svg' />
+              </div>
+              <div className={aboutMeOff}>
+                <img className='headertext onpush on' src='/aboutMeOn.svg' />
+                <img className='headertext off' src='/aboutMeOff.svg' />
+              </div>
             </div>
+
 
             <div className='onOffWrapper headetextonoff'>
               <img className='headertext onpush on' src='/workOn.svg' />
@@ -175,8 +202,8 @@ closePortfolio = () =>{
               <div className='socialWrapper'>
                 <a href="https://www.linkedin.com/in/connor-anderson-34607999/">
                   <div className='onOffWrapper'>
-                    <img className='socialSVG off' src='/linkedinOff.svg' />
-                    <img className='socialSVG on' src='/linkedinOn.svg' />
+                      <img className='socialSVG off' src='/linkedinOff.svg' />
+                      <img className='socialSVG on' src='/linkedinOn.svg' />
                   </div>
                 </a>
                 <a href="https://www.instagram.com/krnzsti/">
@@ -241,11 +268,43 @@ closePortfolio = () =>{
         </div>
 
         <div className='pageFour'>
-          <img className='map' src='/map3.svg' />
+          <div className='image' />
+          <div className='headerWrapper'>
+            <h1>Education</h1>
+            <h2>BCOM & BCS</h2>
+            <i className="fa fa-file-pdf-o fa-5x" aria-hidden="true"></i>
+            <div className='skills'>
+              <div className='skillWrapper'>
+                <h2> Javascript </h2>
+                <h3> React | Redux | React Router 4 | AntD | Semantic UI | ES6 </h3>
+              </div>
+              <div className='skillWrapper'>
+                <h2> Web Styling </h2>
+                <h3> SCSS | SVG Animations | Adobe Illustrator | Adobe Photoshop </h3>
+              </div>
+
+              <div className='skillWrapper'>
+                <h2> Data </h2>
+                <h3> REST | Firebase | MySQL | KVP </h3>
+              </div>
+
+              <div className='skillWrapper'>
+                <h2> Other Languages </h2>
+                <h3> Java | Python | x86 | Haskell | Pascal </h3>
+              </div>
+
+              <div className='skillWrapper'>
+                <h2> Reading </h2>
+                <h3> You Don't Know JS </h3>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
         <div className='pageFive'>
-          <div className='mapWrapper' style={{width: '100%', height: '400px'}}>
+          <div className='mapWrapper' style={{width: '100%', height: '250px'}}>
             <SimpleMap />
           </div>
         </div>
@@ -335,6 +394,11 @@ let map = new google.maps.Map(mapElement, mapOptions);
     </div>
 
   </div>
+</div>
+
+
+<div className='pageFour'>
+  <img className='map' src='/map3.svg' />
 </div>
 
 */

@@ -1,6 +1,16 @@
 $header: 'Open Sans', sans-serif;
 $paragraph: 'Gentium Basic', serif;
 
+.navBarHeaderActive{
+  display: block;
+}
+
+.navBarHeaderInactive{
+  display: none;
+}
+
+
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -352,25 +362,67 @@ $paragraph: 'Gentium Basic', serif;
 
   .pageFour{
     position: relative;
-    background-color: orange;
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    .map{
+    z-index: 1;
+    overflow-y: hidden;
+    .image{
       position: absolute;
       height: 100vh;
       width: 100%;
-      background: linear-gradient(90deg, #1976D2, #BBDEFB);
+      top: 0px;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.imgur.com/LNHhi78.png) no-repeat center center fixed;
+      background-color:#4f717a;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      z-index: 2;
+    }
+    h1, p, h2 {
+      color: white;
+      text-align: left;
+    }
+
+    .headerWrapper{
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .fa-file-pdf-o{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: white;
+        z-index: 3;
+        cursor: pointer;
+      }
+    }
+
+    h1{
+      z-index: 2;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 13vw;
+    }
+
+    h2{
+      z-index: 2;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 4vw;
     }
 
   }
 
   .pageFive{
     position: relative;
-    height: 30vh;
+    height: 250px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -471,5 +523,34 @@ $paragraph: 'Gentium Basic', serif;
   }
   100% {
     height: 100vh;
+  }
+}
+
+
+
+
+.skills{
+  margin-left: 10px;
+  position: absolute;
+  top: 20vh;
+  right: 10px;
+  z-index: 99;
+  h2{
+    color: #F3E5F5;
+    padding-left: 10px;
+  }
+  h3{
+    font-size: 2vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #F5F5F5;
+  }
+  .skillWrapper{
+    background: rgba(36,9,48, 0.3);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
   }
 }
